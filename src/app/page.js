@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <>
       <FirstContainer/>
+      <div className="mx-20">
       <SecondContainer/>
+      </div>
+      
     </>
   );
 }
