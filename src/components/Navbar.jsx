@@ -5,7 +5,7 @@ import { navlinks } from "@/utils/textUtils";
 
 export default function Navbar() {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-[#e6ccb2]">
       <div className="flex items-center justify-between w-[90%] m-auto">
         <div className="justify-center flex">
           <Image src={logo} alt="logo" className="w-[100px] h-auto" />
@@ -15,7 +15,7 @@ export default function Navbar() {
             return (
               <Link
                 key={link._id}
-                className="text-base font-medium"
+                className="text-base font-medium text-[#7f5539]"
                 href={link.path}
               >
                 {link.title}

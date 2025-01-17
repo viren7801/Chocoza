@@ -1,5 +1,10 @@
 export const navlinks = [
   {
+    _id: "aa86ba6e-a86a-4c4b-92dd-7f627ed897cb",
+    title: "Home",
+    path: "/#",
+  },
+  {
     _id: "aa86ba6e-a86a-4c4b-92dd-7f627ed897cd",
     title: "Products",
     path: "/#",
