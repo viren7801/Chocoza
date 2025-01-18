@@ -1,5 +1,7 @@
 import Image from "next/image";
 import cartoonImg from "../public/Images/cartoon.png";
+import Cards_widget from "./Cards_widget";
+import { cardData } from "@/utils/CardData";
 
 export default function SecondContainer() {
   return (
@@ -62,8 +64,68 @@ export default function SecondContainer() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center h-scree text-5xl bg-[#e6ccb2]">
-        <h1 className="my-10 text-[#713f12]">Top Picks</h1>
+      <div className="flex flex-col items-center h-[90vh] bg-[#e6ccb2]">
+        <h1 className="my-10 text-5xl text-[#713f12]">Top Picks</h1>
+        <div className="flex flex-wrap justify-center bg-orange-50 rounded-md p-10">
+          {/* Map through cardData and render CardsWidget */}
+          {cardData.map((card, index) => (
+            <Cards_widget
+              key={index}
+              category={card.category}
+              title={card.title}
+              image={card.image}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-center justify-between mx-4 sm:mx-20 py-10 h-screen">
+        {/* Left: Text Section */}
+        <div className="w-full sm:w-1/2 text-center sm:text-left mb-8 sm:mb-0">
+          <h1 className="text-[#713f12] text-3xl font-semibold">
+            Exclusive Hampers for Unforgettable Moments!
+          </h1>
+          <h2 className="text-[#a16207] text-lg sm:text-xl">
+            Packed with care, love, and all your favorites, our special gift
+            hampers are perfect for creating memories.
+          </h2>
+        </div>
+
+        {/* Right: Image Section */}
+        <div className="w-full sm:w-1/2 flex justify-center">
+          <Image
+            src={cartoonImg}
+            alt="cartoon-image"
+            className="w-full sm:max-w-[500px] max-w-[400px] m-auto"
+            width={500}
+            height={500}
+          />
+        </div>
+      </div>
+
+      {/* Second Section: Image on Left, Text on Right */}
+      <div className="flex flex-col sm:flex-row justify-center items-center px-10 py-10 h-screen">
+        {/* Left: Image Section */}
+        <div className="w-full sm:w-1/2 flex justify-center mb-8 sm:mb-0">
+          <Image
+            src={cartoonImg}
+            alt="cartoon-image"
+            className="w-full sm:max-w-[500px] max-w-[400px] m-auto"
+            width={500}
+            height={500}
+          />
+        </div>
+
+        {/* Right: Text Section */}
+        <div className="w-full sm:w-1/2 text-center sm:text-left">
+          <h1 className="text-[#713f12] text-3xl font-semibold">
+            Exclusive Hampers for Unforgettable Moments!
+          </h1>
+          <h2 className="text-[#a16207] text-lg sm:text-xl">
+            Packed with care, love, and all your favorites, our special gift
+            hampers are perfect for creating memories.
+          </h2>
+        </div>
       </div>
     </>
   );
