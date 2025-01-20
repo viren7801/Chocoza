@@ -1,5 +1,5 @@
 import Image from "next/image";
-import cartoonImg from "../public/Images/cartoon.png";
+import cartoonImg from "../images/cartoon.png";
 import Cards_widget from "./Cards_widget";
 import { cardData } from "@/utils/CardData";
 

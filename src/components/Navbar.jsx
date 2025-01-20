@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../public/Images/logo.png";
+import logo from "../images/logo.png";
 import Link from "next/link";
 import { navlinks } from "@/utils/textUtils";
 

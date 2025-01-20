@@ -1,6 +1,6 @@
-import img1 from "../public/images/IMG_2642.jpg";
-import img2 from "../public/images/IMG_2408.jpg";
-import img3 from "../public/images/IMG_2394.jpg";
+import img1 from "../images/IMG_2642.jpg";
+import img2 from "../images/IMG_2408.jpg";
+import img3 from "../images/IMG_2394.jpg";
 
 export const cardData = [
   {
