@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Img1 from "../public/Images/Hero-image-1.jpg";
+import Img1 from "../images/Hero-image-1.jpg";
 
 export default function FirstContainer() {
   return (
