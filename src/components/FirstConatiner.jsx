@@ -1,26 +1,49 @@
+"use client";
+
 import Image from "next/image";
 import Img1 from "../images/Hero-image-1.jpg";
 
+// ===============================================
+
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+// calc(100vh - 100px)
 export default function FirstContainer() {
   return (
-    <div className="relative overflow-x-scroll flex p-4 bg-gray-200 max-h-screen snap-x snap-mandatory">
-      <div className="flex-shrink-0 w-screen h-[90vh] snap-center relative">
-        <Image
-          src={Img1}
-          alt="Hero Image 1"
-          layout="fill"
-          objectFit="cover"
-          priority={true}
-        />
-      </div>
-
-      <div className="flex-shrink-0 w-screen h-[90vh] snap-center relative">
-        <Image src={Img1} alt="Hero Image 2" layout="fill" objectFit="cover" />
-      </div>
-
-      <div className="flex-shrink-0 w-screen h-[90vh] snap-center relative">
-        <Image src={Img1} alt="Hero Image 3" layout="fill" objectFit="cover" />
-      </div>
+    <div className="h-[calc(100vh-100px)] bg-gray-200">
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <Image src={Img1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src={Img1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src={Img1} alt="" />
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 }
