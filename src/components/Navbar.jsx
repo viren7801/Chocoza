@@ -5,7 +5,7 @@ import { navlinks } from "@/utils/textUtils";
 
 export default function Navbar() {
   return (
-    <div className="bg-[#e6ccb2] fixed top-0 left-0 w-full z-50">
+    <div className="bg-[#e6ccb2] sticky top-0 left-0 w-full z-50">
       <div className="flex items-center justify-between w-[90%] m-auto">
         <div className="justify-center flex">
           <Link href="/" aria-label="Go to homepage">

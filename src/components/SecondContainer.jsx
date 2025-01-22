@@ -7,14 +7,14 @@ export default function SecondContainer() {
   return (
     <>
       <div>
-        <h1 className="text-8xl text-center mb-10 animate-pulse text-[#774936]">
+        <h1 className="text-8xl text-center my-10 animate-pulse text-[#774936]">
           Taste The Magic!
         </h1>
       </div>
 
-      <div className="flex justify-center items-center space-x-10 mx-20">
+      <div className="flex justify-center items-center space-x-10 mx-20 my-10">
         <div className="w-1/2">
-          <div>
+          <div className="mb-10">
             <h1 className="text-[#713f12] text-2xl">CRAFTED TO PERFECTION</h1>
             <h2 className="text-[#a16207]">
               Every Chocoza creation is a masterpiece, blending premium
@@ -43,7 +43,7 @@ export default function SecondContainer() {
         </div>
 
         <div className="w-1/2">
-          <div>
+          <div className="mb-10">
             <h1 className="text-[#713f12] text-2xl">
               FLAVORS THAT TELL A STORY
             </h1>
