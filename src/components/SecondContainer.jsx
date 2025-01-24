@@ -7,7 +7,7 @@ export default function SecondContainer() {
   return (
     <>
       <div>
-        <h1 className="text-8xl text-center my-10 animate-pulse text-[#774936]">
+        <h1 className="text-8xl text-center my-10 animate-pulse text-[#774936] ">
           Taste The Magic!
         </h1>
       </div>

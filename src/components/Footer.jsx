@@ -2,7 +2,8 @@ import Image from "next/image";
 import logo from "../images/logo.png";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: Logo (Left side) */}
         <div className="flex flex-col items-start mb-6 md:mb-0 md:col-span-1">
-          <Image src={logo} alt="Chocoza Logo" width={150} height={50} />
+          <Image src={logo} alt="Chocoza Logo" width={200} height={150} />
         </div>
 
         {/* Columns 2 and 3 (Quick Links & Connect with Us) moved to the right */}
@@ -39,33 +40,31 @@ export default function Footer() {
           {/* Column 3: Connect with Us */}
           <div className="flex flex-col items-start space-y-4">
             <h3 className="text-lg font-semibold">Connect with Us</h3>
-            <div className="flex space-x-4 mb-6">
+            <div className="flex space-x-4 m-auto">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61571436689470"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#7f5539] hover:text-[#5d3f2f] "
                 aria-label="Facebook"
               >
-                <i className="fab fa-facebook"></i>{" "}
-                {/* Assuming FontAwesome is set up */}
+                <FontAwesomeIcon icon={faFacebook} size="xl" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/__chocoza__/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#7f5539] hover:text-[#5d3f2f] "
                 aria-label="Instagram"
               >
-                <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon icon={faInstagram} size="xl" />
               </a>
               <a
                 href="mailto:chocoza.chocolates@gmail.com"
                 className="text-[#7f5539] hover:text-[#5d3f2f] "
                 aria-label="Email"
               >
-                <i className="fas fa-envelope"></i>{" "}
-                {/* Assuming FontAwesome is set up */}
+                <FontAwesomeIcon icon={faEnvelope} size="xl" />
               </a>
             </div>
           </div>
