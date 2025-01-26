@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Img1 from "../images/Hero-image-1.png";
+import Img2 from "../images/hero-image-2.png";
+import Img3 from "../images/Hero-image-3.png";
 
 // ===============================================
 
@@ -38,10 +40,10 @@ export default function FirstContainer() {
           <Image src={Img1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={Img1} alt="" />
+          <Image src={Img2} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={Img1} alt="" />
+          <Image src={Img3} alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

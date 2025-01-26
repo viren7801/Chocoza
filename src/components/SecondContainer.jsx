@@ -2,6 +2,7 @@ import Image from "next/image";
 import cartoonImg from "../images/cartoon.png";
 import Cards_widget from "./Cards_widget";
 import { cardData } from "@/utils/CardData";
+import Img4 from "../images/Hero-image-4.png";
 
 export default function SecondContainer() {
   return (
@@ -77,6 +78,10 @@ export default function SecondContainer() {
             />
           ))}
         </div>
+      </div>
+
+      <div>
+        <Image src={Img4} alt="hero-image-4" />
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-between mx-4 sm:mx-20 py-10 h-screen">
