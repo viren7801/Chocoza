@@ -30,12 +30,12 @@ export default function CardsWidget({ category, title, image }) {
       </svg>
 
       {/* Image Section */}
-      <div className="relative flex items-center justify-center overflow-hidden h-48">
+      <div className="relative flex items-center justify-center overflow-hidden h-48 bg-[#f4ebe5]">
         <Image
           src={image}
           alt={title}
-          width={160}
-          height={160}
+          width={200}
+          height={300}
           className="object-contain" // Ensures the image fits without distortion
         />
       </div>

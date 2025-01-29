@@ -1,14 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import cartoonImg from "../images/cartoon.png";
+import hamperImg from "../images/HamperImage.png";
+import customCupcake1 from "../images/customCupcake1.png";
+import customCupcake2 from "../images/customCupcake2.png";
+import customCupcake3 from "../images/CustomCupcake3.png";
 import Cards_widget from "./Cards_widget";
 import { cardData } from "@/utils/CardData";
-import Img4 from "../images/Hero-image-4.png";
+import Img4 from "../images/overlayImage.jpg";
+import React, { useRef, useState } from "react";
 
 export default function SecondContainer() {
   return (
     <>
       <div>
-        <h1 className="text-8xl text-center my-10 animate-pulse text-[#774936] ">
+        <h1 className="text-8xl text-center my-10 animate-pulse text-[#774936]">
           Taste The Magic!
         </h1>
       </div>
@@ -80,31 +92,81 @@ export default function SecondContainer() {
         </div>
       </div>
 
-      <div>
-        <Image src={Img4} alt="hero-image-4" />
+      <div className="relative">
+        <Image src={Img4} alt="hero-image-4" className="w-full h-full" />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="text-center text-white px-4">
+            <h1 className="text-4xl sm:text-6xl font-bold">
+              Discover Pure Indulgence
+            </h1>
+            <p className="text-lg sm:text-2xl mt-4">
+              Dive into a world of irresistible flavors and unforgettable
+              memories with Chocoza.
+            </p>
+          </div>
+        </div>
       </div>
 
+      {/* Section with Swiper replacing the right-side image */}
       <div className="flex flex-col sm:flex-row items-center justify-between mx-4 sm:mx-20 py-10 h-screen">
         {/* Left: Text Section */}
-        <div className="w-full sm:w-1/2 text-center sm:text-left mb-8 sm:mb-0 max-w-[50%]">
+        <div className="w-full sm:w-1/2 text-center sm:text-left mb-8 sm:mb-0 max-w-[40%]">
           <h1 className="text-[#713f12] text-3xl font-semibold">
-            Exclusive Hampers for Unforgettable Moments!
+            Personalized Cupcakes for Special Moments!
           </h1>
-          <h2 className="text-[#a16207] text-lg sm:text-xl ">
-            Packed with care, love, and all your favorites, our special gift
-            hampers are perfect for creating memories.
+          <h2 className="text-[#a16207] text-lg sm:text-xl">
+            Crafted with love and topped with chocolate letters, our
+            customizable letter cupcakes are the sweetest way to express your
+            feelings. Perfect for birthdays, anniversaries, and heartfelt
+            surprises!
           </h2>
         </div>
 
-        {/* Right: Image Section */}
+        {/* Right: Swiper Image Section */}
         <div className="w-full sm:w-1/2 flex justify-end">
-          <Image
-            src={cartoonImg}
-            alt="cartoon-image"
-            className="w-full sm:max-w-[600px] max-w-[500px]"
-            width={500}
-            height={500}
-          />
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              dynamicBullets: true,
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <Image
+                src={customCupcake1}
+                alt="customCupcake1"
+                className="object-contain"
+                width={500}
+                height={500}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                src={customCupcake2}
+                alt="customCupcake2"
+                className="object-contain"
+                width={500}
+                height={500}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                src={customCupcake3}
+                alt="customCupcake3"
+                className="object-contain"
+                width={500}
+                height={500}
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
 
@@ -113,8 +175,8 @@ export default function SecondContainer() {
         {/* Left: Image Section */}
         <div className="w-full sm:w-1/2 flex justify-start mb-8 sm:mb-0">
           <Image
-            src={cartoonImg}
-            alt="cartoon-image"
+            src={hamperImg}
+            alt="Hamper Image"
             className="w-full sm:max-w-[600px] max-w-[500px]"
             width={500}
             height={500}

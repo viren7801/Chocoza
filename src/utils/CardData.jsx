@@ -1,8 +1,8 @@
-import img1 from "../images/IMG_2642.jpg";
-import img2 from "../images/IMG_2408.jpg";
-import img3 from "../images/IMG_2394.jpg";
+import img1 from "../images/ChocoBlast.png";
+import img2 from "../images/pomogranateChocolate.png";
+import img3 from "../images/nuttyHearts.png";
 import img4 from "../images/ChocoBlast.png";
-import img5 from "../images/nuttyHearts2.png";
+import img5 from "../images/nuttyHearts.png";
 import img6 from "../images/pomogranateChocolate.png";
 import img7 from "../images/silkyChocolate.png";
 import img8 from "../images/cookieChocolate.png";
@@ -12,7 +12,7 @@ import img11 from "../images/redvelvetCupcake.png";
 import img12 from "../images/BelgianCupcake.png";
 import img14 from "../images/kitkatCupcake.png";
 import img15 from "../images/oreoCupcake.png";
-import img16 from "../images/strawberryCupcake.png";
+import img16 from "../images/strawberryDreamCake.png";
 
 export const cardData = [
   {
