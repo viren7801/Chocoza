@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Columns 2 and 3 (Quick Links & Connect with Us) */}
           <div className="flex flex-col space-y-8 md:flex-row md:justify-end md:space-y-0 md:space-x-8 md:col-span-2">
             {/* Contact Information Section */}
-            <div className="text-left text-sm text-[#7f5539]">
+            <div className="md:text-left md:m-0 text-sm text-[#7f5539] m-auto text-center">
               <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
               <p>
                 <strong>Email:</strong>{" "}

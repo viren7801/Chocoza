@@ -1,11 +1,10 @@
 import ProductCard from "@/components/card_widgets/ProductCard";
-import CardsWidget from "@/components/Cards_widget";
 import { productsCard } from "@/utils/CardData";
 
 export default function Products({ category, title, image }) {
   return (
     <>
-      <div className="flex flex-col items-center bg-[#e6ccb2] py-10">
+      <div className="flex flex-col items-center bg-[#fcecdb] py-10">
         <div className="w-[90%] m-auto">
           <h1 className="md:mb-10 mb-6 md:text-4xl text-3xl font-semibold text-[#713f12]">
             Products
