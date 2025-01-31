@@ -20,26 +20,29 @@ export default function SecondContainer() {
   return (
     <>
       <div>
-        <h1 className="text-8xl text-center my-10 animate-pulse text-[#774936]">
+        <h1 className="md:text-8xl text-4xl text-center my-10 animate-pulse text-[#774936]">
           Taste The Magic!
         </h1>
       </div>
 
-      <div className="flex justify-center items-center space-x-10 mx-20 my-10">
-        <div className="w-1/2">
-          <div className="mb-10">
-            <h1 className="text-[#713f12] text-2xl">CRAFTED TO PERFECTION</h1>
-            <h2 className="text-[#a16207]">
+      <div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-10 mx-4 sm:mx-20 my-10 gap-6 sm:gap-0">
+        {/* Left Text Section */}
+        <div className="w-full sm:w-1/2 text-center sm:text-left px-4">
+          <div className="mb-6">
+            <h1 className="text-[#713f12] text-xl sm:text-2xl">
+              CRAFTED TO PERFECTION
+            </h1>
+            <h2 className="text-[#a16207] text-sm sm:text-base">
               Every Chocoza creation is a masterpiece, blending premium
               ingredients with meticulous care to deliver an unforgettable
               experience.
             </h2>
           </div>
           <div>
-            <h1 className="text-[#713f12] text-2xl">
+            <h1 className="text-[#713f12] text-xl sm:text-2xl">
               FROM OUR KITCHEN TO YOUR HEART
             </h1>
-            <h2 className="text-[#a16207]">
+            <h2 className="text-[#a16207] text-sm sm:text-base">
               We believe in spreading joy through the irresistible taste of our
               chocolates, cakes, and cupcakes, made with love for every
               occasion.
@@ -47,29 +50,31 @@ export default function SecondContainer() {
           </div>
         </div>
 
-        <div className="w-[80vh]">
+        {/* Center Image Section */}
+        <div className="w-full sm:w-[80vh] flex justify-center">
           <Image
             src={cartoonImg}
             alt="cartoon-image"
-            className="w-full m-auto"
+            className="w-[70%] sm:w-full max-w-[300px] sm:max-w-none"
           />
         </div>
 
-        <div className="w-1/2">
-          <div className="mb-10">
-            <h1 className="text-[#713f12] text-2xl">
+        {/* Right Text Section */}
+        <div className="w-full sm:w-1/2 text-center sm:text-left px-4">
+          <div className="mb-6">
+            <h1 className="text-[#713f12] text-xl sm:text-2xl">
               FLAVORS THAT TELL A STORY
             </h1>
-            <h2 className="text-[#a16207]">
+            <h2 className="text-[#a16207] text-sm sm:text-base">
               Each bite of Chocoza is a journey of flavors, crafted with
               inspiration, passion, and a dash of magic.
             </h2>
           </div>
           <div>
-            <h1 className="text-[#713f12] text-2xl">
+            <h1 className="text-[#713f12] text-xl sm:text-2xl">
               YOUR MOMENT, OUR TREASURE
             </h1>
-            <h2 className="text-[#a16207]">
+            <h2 className="text-[#a16207] text-sm sm:text-base">
               Whether it’s a birthday, celebration, or a sweet craving, Chocoza
               adds a special touch to your cherished moments.
             </h2>
@@ -77,18 +82,20 @@ export default function SecondContainer() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center h-[90vh] bg-[#e6ccb2]">
-        <h1 className="my-10 text-5xl text-[#713f12]">Top Picks</h1>
-        <div className="flex flex-wrap justify-center bg-orange-50 rounded-md p-10">
-          {/* Map through cardData and render CardsWidget */}
-          {cardData.map((card, index) => (
-            <Cards_widget
-              key={index}
-              category={card.category}
-              title={card.title}
-              image={card.image}
-            />
-          ))}
+      <div className="hidden md:block">
+        <div className="flex flex-col items-center h-[90vh] bg-[#e6ccb2]">
+          <h1 className="my-10 text-5xl text-[#713f12]">Top Picks</h1>
+          <div className="flex flex-wrap justify-center bg-orange-50 rounded-md p-10">
+            {/* Map through cardData and render CardsWidget */}
+            {cardData.map((card, index) => (
+              <Cards_widget
+                key={index}
+                category={card.category}
+                title={card.title}
+                image={card.image}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -96,7 +103,7 @@ export default function SecondContainer() {
         <Image src={Img4} alt="hero-image-4" className="w-full h-full" />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <h1 className="text-4xl sm:text-6xl font-bold">
+            <h1 className="md:text-4xl text-2xl sm:text-6xl font-bold">
               Discover Pure Indulgence
             </h1>
             <p className="text-lg sm:text-2xl mt-4">
@@ -110,8 +117,8 @@ export default function SecondContainer() {
       {/* Section with Swiper replacing the right-side image */}
       <div className="flex flex-col sm:flex-row items-center justify-between mx-4 sm:mx-20 py-10 h-screen">
         {/* Left: Text Section */}
-        <div className="w-full sm:w-1/2 text-center sm:text-left mb-8 sm:mb-0 max-w-[40%]">
-          <h1 className="text-[#713f12] text-3xl font-semibold">
+        <div className="w-full sm:w-1/2 text-center sm:text-left mb-8 sm:mb-0 max-w-[90%] md:max-w-[40%]">
+          <h1 className="text-[#713f12] text-2xl md:text-3xl font-semibold mb-2 md:mb-2">
             Personalized Cupcakes for Special Moments!
           </h1>
           <h2 className="text-[#a16207] text-lg sm:text-xl">

@@ -16,19 +16,24 @@ import img16 from "../images/strawberryDreamCake.png";
 
 export const cardData = [
   {
-    // category: "Indoor",
+    category: "Chocolate",
     title: "Choco Blast",
     image: img1,
   },
   {
-    // category: "Outdoor",
+    category: "Chocolate",
     title: "Pomegranate Chocolate",
     image: img2,
   },
   {
-    // category: "Succulent",
+    category: "Chocolate",
     title: "Nutty Hearts",
     image: img3,
+  },
+  {
+    category: "Dream Cake",
+    title: "Strawberry Vanilla",
+    image: img16,
   },
 ];
 
