@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import Img1Desktop from "../images/Hero-image-1.png";
-import Img2Desktop from "../images/hero-image-2.png";
-import Img3Desktop from "../images/Hero-image-3.png";
-import Img1Mobile from "../images/Hero-image-1-mobile.png";
-import Img2Mobile from "../images/hero-image-2-mobile.png";
-import Img3Mobile from "../images/Hero-image-3-mobile.png";
+import Img1Desktop from "@/images/Hero-image-1.png";
+import Img2Desktop from "@/images/hero-image-2.png";
+import Img3Desktop from "@/images/Hero-image-3.png";
+import Img1Mobile from "@/images/Hero-image-1-mobile.png";
+import Img2Mobile from "@/images/hero-image-2-mobile.png";
+import Img3Mobile from "@/images/Hero-image-3-mobile.png";
 
 // ===============================================
 
