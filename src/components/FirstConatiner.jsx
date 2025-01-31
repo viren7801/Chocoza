@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Img1Desktop from "../images/Hero-image-1.png";
 import Img2Desktop from "../images/hero-image-2.png";
@@ -41,7 +40,7 @@ export default function FirstContainer() {
 
   return (
     <div
-      className={`bg-gray-200 ${isMobile ? "h-auto" : "h-[calc(100vh-100px)]"}`}
+      className={`${isMobile ? "h-auto" : "h-[calc(100vh-100px)]"}`}
     >
       <Swiper
         spaceBetween={30}

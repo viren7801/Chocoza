@@ -18,7 +18,7 @@ import React, { useRef, useState } from "react";
 
 export default function SecondContainer() {
   return (
-    <>
+    <div>
       <div>
         <h1 className="md:text-8xl text-4xl text-center my-10 animate-pulse text-[#774936]">
           Taste The Magic!
@@ -201,6 +201,6 @@ export default function SecondContainer() {
           </h2>
         </div>
       </div>
-    </>
+    </div>
   );
 }

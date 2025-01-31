@@ -1,7 +1,6 @@
 "use client";
-
 import Image from "next/image";
-import logo from "../images/logo.png";
+import logo from "../images/logo_new.png";
 import Link from "next/link";
 import { navlinks } from "@/utils/textUtils";
 import { useState } from "react";
@@ -10,7 +9,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#e6ccb2] sticky top-0 left-0 w-full z-50">
+    <div className="bg-[#e6ccb2] sticky top-0 left-0 w-full z-50 py-4">
       <div className="flex items-center justify-between w-[90%] m-auto">
         {/* Logo */}
         <div className="justify-center flex">
@@ -18,7 +17,7 @@ export default function Navbar() {
             <Image
               src={logo}
               alt="Logo"
-              className="w-[100px] h-auto cursor-pointer"
+              className="w-[70px] h-auto cursor-pointer"
               priority
             />
           </Link>
@@ -74,7 +73,7 @@ export default function Navbar() {
 
       {/* Mobile NavLinks */}
       {menuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-[#e6ccb2] shadow-lg">
+        <div className="md:hidden absolute top-19 left-0 w-full bg-[#e6ccb2] shadow-lg">
           <div className="flex flex-col items-end gap-4 p-4">
             {navlinks.map((link) => (
               <Link
