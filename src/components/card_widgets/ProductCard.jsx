@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ProductCard({ category, title, image }) {
+export default function ProductCard({ category, title, image, isBestSeller }) {
   // Replace these with your actual WhatsApp number and message
   const phoneNumber = "9409664446"; // Replace with your WhatsApp number
   const predefinedMessage = `I want to buy the ${title} from Chocoza!`; // Customize the message
@@ -10,9 +10,15 @@ export default function ProductCard({ category, title, image }) {
   )}`;
 
   return (
-    <div className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
-      <div className="w-full h-auto">
+    <div className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden relative">
+      <div className="w-full h-auto relative">
         <Image src={image} alt={title} className="bg-[#f4ebe5]" />
+        {/* Conditionally render 'Best Seller' tag */}
+        {isBestSeller && (
+          <div className="absolute top-2 left-2 bg-[#713f12] text-white text-xs font-semibold px-2 py-1 rounded-lg shadow-lg">
+            Best Seller
+          </div>
+        )}
       </div>
       <div className="flex flex-col p-4 bg-[#ede0d4] text-[#713f12] rounded-b-lg h-full">
         <span className="block text-sm opacity-75">{category}</span>

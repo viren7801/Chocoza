@@ -67,61 +67,73 @@ export const productsCard = [
     category: "Chocolate",
     title: "Choco Blast",
     image: img4,
+    isBestSeller: true,
   },
   {
     category: "Chocolate",
     title: "Nutty Hearts",
     image: img5,
+    isBestSeller: true,
   },
   {
     category: "Chocolate",
     title: "Pomegranate Chocolate",
     image: img6,
+    isBestSeller: true,
   },
   {
     category: "Chocolate",
     title: "Silky Chocolate",
     image: img7,
+    isBestSeller: false,
   },
   {
     category: "Chocolate",
     title: "Cookie Chocolate",
     image: img8,
+    isBestSeller: false,
   },
   {
     category: "Cupcakes",
     title: "Melty Chocolate",
     image: img9,
+    isBestSeller: false,
   },
   {
     category: "Cupcakes",
     title: "Vanilla Edition",
     image: img10,
+    isBestSeller: false,
   },
   {
     category: "Cupcakes",
     title: "Red Velvet",
     image: img11,
+    isBestSeller: false,
   },
   {
     category: "Cupcakes",
     title: "Belgian Chocolate",
     image: img12,
+    isBestSeller: false,
   },
   {
     category: "Cupcakes",
     title: "Kitkat Cupcake",
     image: img14,
+    isBestSeller: false,
   },
   {
     category: "Cupcakes",
     title: "Oreo Cupcake",
     image: img15,
+    isBestSeller: false,
   },
   {
     category: "Dream Cake",
     title: "Strawberry Vanilla",
     image: img16,
+    isBestSeller: true,
   },
 ];
 
