@@ -39,9 +39,7 @@ export default function FirstContainer() {
   }, []);
 
   return (
-    <div
-      className={`${isMobile ? "h-auto" : "h-[calc(100vh-100px)]"}`}
-    >
+    <div className={`${isMobile ? "h-auto" : "h-[calc(100vh-100px)]"}`}>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
