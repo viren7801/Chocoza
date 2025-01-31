@@ -1,5 +1,5 @@
 import ProductCard from "@/components/card_widgets/ProductCard";
-import { productsCard } from "@/utils/CardData";
+import { productsCard } from "@/utils/textUtils";
 
 export default function Products({ category, title, image }) {
   return (

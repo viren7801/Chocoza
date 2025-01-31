@@ -7,7 +7,7 @@ export default function SecondContainer() {
   return (
     <div className="min-h-screen flex justify-center align-middle flex-col">
       <div>
-        <h1 className=" md:text-6xl text-3xl text-center md:my-0 my-10 mb-0 animate-pulse text-[#774936] mb-1">
+        <h1 className=" md:text-6xl text-3xl text-center md:my-0 my-10 animate-pulse text-[#774936] mb-1">
           Taste The Magic!
         </h1>
       </div>
