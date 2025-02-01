@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +15,7 @@ function FifthContainer() {
   return (
     <div>
       {/* Section with Swiper replacing the right-side image */}
-      <div className="flex flex-col sm:flex-row items-center justify-between mx-4 sm:mx-20 py-10 h-screen">
+      <div className="flex flex-col sm:flex-row items-center justify-between mx-4 sm:mx-20 py-10 h-screen md:my-5">
         {/* Left: Text Section */}
         <div className="w-full sm:w-1/2 text-center sm:text-left mb-8 sm:mb-0 max-w-[90%] md:max-w-[40%]">
           <h1 className="text-[#713f12] text-2xl md:text-3xl font-semibold mb-2 md:mb-2">

@@ -5,14 +5,14 @@ import React from "react";
 
 export default function SecondContainer() {
   return (
-    <div className="min-h-screen flex justify-center align-middle flex-col">
+    <div className="flex justify-center align-middle flex-col">
       <div>
-        <h1 className=" md:text-6xl text-3xl text-center md:my-0 my-10 animate-pulse text-[#774936] mb-1">
+        <h1 className=" md:text-7xl text-3xl text-center md:my-5 my-5 animate-pulse text-[#774936] mb-1">
           Taste The Magic!
         </h1>
       </div>
 
-      <div className="w-[90%] flex flex-col md:flex-row justify-center items-center sm:space-x-10 mx-4 sm:m-auto   md:my-10 my-4 gap-6 sm:gap-0">
+      <div className="md:w-[95%] w-[90%] flex flex-col md:flex-row justify-center items-center sm:space-x-10 mx-4 sm:m-auto   md:my-10 my-4 gap-6 sm:gap-0">
         {/* Top Image Section For Small Screens */}
         <div className="md:hidden w-full sm:w-[90%] flex justify-center">
           <Image src={cartoonImg} alt="cartoon-image" className="w-[100%]" />
@@ -43,7 +43,7 @@ export default function SecondContainer() {
         </div>
 
         {/* Center Image Section */}
-        <div className="md:flex hidden w-full sm:w-[80vh] justify-center">
+        <div className="md:flex hidden w-full sm:w-[100%] justify-center">
           <Image
             src={cartoonImg}
             alt="cartoon-image"
