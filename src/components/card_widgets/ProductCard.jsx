@@ -12,7 +12,7 @@ export default function ProductCard({ category, title, image, isBestSeller }) {
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden relative">
       <div className="w-full h-auto relative">
-        <Image src={image} alt={title} className="bg-[#f4ebe5]" />
+        <Image src={image} alt={title} className="bg-[#f4ebe5]" priority />
         {/* Conditionally render 'Best Seller' tag */}
         {isBestSeller && (
           <div className="absolute top-2 left-2 bg-[#713f12] text-white text-xs font-semibold px-2 py-1 rounded-lg shadow-lg">
