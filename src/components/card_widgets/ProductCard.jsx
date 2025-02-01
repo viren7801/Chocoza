@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export default function ProductCard({ category, title, image, isBestSeller }) {
-  const phoneNumber = "9409664446";
+  const phoneNumber = "+919409664446";
   const predefinedMessage = `I want to buy the ${title} from Chocoza!`;
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     predefinedMessage
