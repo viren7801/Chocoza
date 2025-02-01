@@ -1,10 +1,8 @@
 import Image from "next/image";
 
 export default function ProductCard({ category, title, image, isBestSeller }) {
-  // Replace these with your actual WhatsApp number and message
-  const phoneNumber = "9409664446"; // Replace with your WhatsApp number
-  const predefinedMessage = `I want to buy the ${title} from Chocoza!`; // Customize the message
-
+  const phoneNumber = "9409664446";
+  const predefinedMessage = `I want to buy the ${title} from Chocoza!`;
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     predefinedMessage
   )}`;
@@ -12,7 +10,20 @@ export default function ProductCard({ category, title, image, isBestSeller }) {
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden relative">
       <div className="w-full h-auto relative">
-        <Image src={image} alt={title} className="bg-[#f4ebe5]" priority />
+        {image ? (
+          <Image
+            src={image}
+            alt={`Image of ${title}`}
+            width={300}
+            height={300}
+            className="bg-[#f4ebe5] object-cover"
+            priority
+          />
+        ) : (
+          <div className="bg-[#f4ebe5] w-full h-[300px] flex items-center justify-center text-gray-500">
+            No Image Available
+          </div>
+        )}
         {/* Conditionally render 'Best Seller' tag */}
         {isBestSeller && (
           <div className="absolute top-2 left-2 bg-[#713f12] text-white text-xs font-semibold px-2 py-1 rounded-lg shadow-lg">
