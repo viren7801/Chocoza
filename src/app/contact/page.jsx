@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -26,13 +26,26 @@ export default function Contact() {
     setIsSubmitting(true);
     setResponseMessage("");
 
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      setResponseMessage("Please enter a valid 10-digit phone number.");
+      setIsSubmitting(false);
+      setTimeout(() => setResponseMessage(""), 5000);
+      return;
+    }
+
+    const formDataEncoded = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      formDataEncoded.append(key, value);
+    });
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/mqaelnkb", {
         method: "POST",
+        body: formDataEncoded,
         headers: {
-          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(formData),
       });
 
       if (res.ok) {
@@ -45,11 +58,16 @@ export default function Contact() {
       setResponseMessage("An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
+
+      // Remove the message after 5 seconds
+      setTimeout(() => {
+        setResponseMessage("");
+      }, 5000);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-10 ">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
       <div className="flex flex-col md:flex-row bg-white max-w-5xl w-full rounded-lg shadow-lg">
         {/* Left Side: Contact Information */}
         <div className="md:w-1/2 p-8 bg-[#f7f3e9] rounded-l-lg flex flex-col justify-center">

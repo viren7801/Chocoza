@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { productsCard } from "@/utils/textUtils";
+import Link from "next/link";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function ProductDetail({ params }) {
   const product = productsCard.find((p) => p.slug === params.slug);
@@ -15,7 +17,16 @@ export default function ProductDetail({ params }) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#fcecdb] py-10 px-4">
-      <div className="w-[90%] md:w-3/4 bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row gap-8">
+      <div className="w-[90%] md:w-3/4 bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row gap-8 relative">
+        {/* Back Button in Upper Left Corner */}
+        <Link
+          href="/products"
+          className="absolute top-4 left-4 text-[#713f12] flex items-center gap-1 hover:text-[#a75c32] transition-all"
+        >
+          <i className="fas fa-arrow-left"></i> {/* FontAwesome Back Arrow */}
+          <span className="text-sm font-medium">Back</span>
+        </Link>
+
         {/* Left Side - Product Image */}
         <div className="w-full md:w-1/2">
           <Image
@@ -45,7 +56,7 @@ export default function ProductDetail({ params }) {
             </span>
           )}
 
-          {/* WhatsApp Button */}
+          {/* Buy Now Button */}
           <a
             href={whatsappLink}
             target="_blank"
