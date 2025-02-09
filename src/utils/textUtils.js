@@ -64,78 +64,104 @@ export const cardData = [
 
 export const productsCard = [
   {
+    slug: "choco-blast",
     category: "Chocolate",
     title: "Choco Blast",
     image: img4,
+    description: "A delightful explosion of rich, creamy chocolate filled with a luscious liquid center. Every bite melts in your mouth, leaving behind an unforgettable cocoa experience!",
     isBestSeller: true,
   },
   {
+    slug: "nutty-hearts",
     category: "Chocolate",
     title: "Nutty Hearts",
+    description: "Indulge in the perfect combination of smooth chocolate and crunchy roasted nuts, shaped with love to satisfy your nutty cravings!",
     image: img5,
     isBestSeller: true,
   },
   {
+    slug: "pomegranate-chocolate",
     category: "Chocolate",
     title: "Pomegranate Chocolate",
+    description: "A bold fusion of velvety dark chocolate and tangy pomegranate bits, creating a refreshing burst of flavor in every bite!",
     image: img6,
     isBestSeller: true,
   },
   {
+    slug: "silky-chocolate",
     category: "Chocolate",
     title: "Silky Chocolate",
+    description: "A classic, smooth, and irresistibly chocolate that melts like silk on your tongue. Simple, yet truly indulgent!",
     image: img7,
     isBestSeller: false,
   },
   {
+    slug: "cookie-chocolate",
     category: "Chocolate",
     title: "Cookie Chocolate",
+    description: "Crunchy cookie crumbs meet rich chocolate in this delightful treat. A perfect blend of crisp and creamy textures for a heavenly experience!",
     image: img8,
     isBestSeller: false,
   },
   {
+    slug: "melty-chocolate",
     category: "Cupcakes",
     title: "Melty Chocolate",
+    description: "A soft chocolate cupcake with a melty chocolate center, bursting with rich chocolate flavor in every bite!",
     image: img9,
     isBestSeller: false,
   },
   {
+    slug: "vanilla-edition",
     category: "Cupcakes",
     title: "Vanilla Edition",
+    description: "A light and fluffy vanilla cupcake topped with silky vanilla frosting. The perfect choice for those who love classic flavors!",
     image: img10,
     isBestSeller: false,
   },
   {
+    slug: "red-velvet",
     category: "Cupcakes",
     title: "Red Velvet",
+    description: "A soft and luscious red velvet cupcake, crowned with creamy frosting. A dreamy treat for any dessert lover!",
     image: img11,
     isBestSeller: false,
   },
   {
+    slug: "belgian-chocolate",
     category: "Cupcakes",
     title: "Belgian Chocolate",
+    description: "Made with the finest Belgian chocolate, this cupcake is a rich, decadent treat for those who crave deep, luxurious cocoa flavors!",
     image: img12,
     isBestSeller: false,
   },
   {
+    slug: "kitkat-cupcake",
     category: "Cupcakes",
     title: "Kitkat Cupcake",
+    description: "A delightful cupcake infused with crunchy KitKat pieces, topped with smooth chocolate frosting for the perfect crunch in every bite!",
     image: img14,
     isBestSeller: false,
   },
   {
+    slug: "oreo-cupcake",
     category: "Cupcakes",
     title: "Oreo Cupcake",
+    description: "A chocolate cupcake with crushed Oreos inside, topped with cookies & cream frosting. The ultimate treat for Oreo lovers",
     image: img15,
     isBestSeller: false,
   },
   {
+    slug: "strawberry-vanilla",
     category: "Dream Cake",
     title: "Strawberry Vanilla",
+    description: "A heavenly combination of rich chocolate cake layered with vanilla cream and fresh strawberries. A dreamy dessert for every special occasion!",
     image: img16,
     isBestSeller: true,
   },
 ];
+
+
 
 // export const products = [
 //   {
