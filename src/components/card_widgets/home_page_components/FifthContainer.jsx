@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import hamperImg from "@/images/hamper2.png";
+import hamperImg from "@/images/Hamper2.png";
 import customCupcake1 from "@/images/customCupcake1.png";
 import customCupcake2 from "@/images/customCupcake2.png";
 import customCupcake3 from "@/images/CustomCupcake3.png";
