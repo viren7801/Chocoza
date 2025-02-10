@@ -3,9 +3,11 @@ import Image from "next/image";
 import Img1Desktop from "@/images/Hero-image-1.png";
 import Img2Desktop from "@/images/hero-image-2.png";
 import Img3Desktop from "@/images/Hero-image-3.png";
+import Img4Desktop from "@/images/Hero-image-4.png";
 import Img1Mobile from "@/images/Hero-image-1-mobile.png";
 import Img2Mobile from "@/images/Hero-image-2-mobile.png";
 import Img3Mobile from "@/images/Hero-image-3-mobile.png";
+import Img4Mobile from "@/images/Hero-image-4-mobile.png";
 
 // ===============================================
 
@@ -121,7 +123,7 @@ export default function FirstContainer() {
               {" "}
               {/* Adjust mobile height here */}
               <Image
-                src={Img3Mobile}
+                src={Img4Mobile}
                 alt="Hero Image 3 Mobile"
                 layout="intrinsic" // Keeps image aspect ratio consistent
                 width={500} // Define the width to scale on mobile
@@ -136,6 +138,36 @@ export default function FirstContainer() {
               <Image
                 src={Img3Desktop}
                 alt="Hero Image 3 Desktop"
+                layout="intrinsic" // Maintain desktop aspect ratio
+                width={1200} // Desktop width
+                height={800} // Desktop height
+                priority
+              />
+            </div>
+          )}
+        </SwiperSlide>
+
+        <SwiperSlide>
+          {isMobile ? (
+            <div className="relative w-full h-[400px]">
+              {" "}
+              {/* Adjust mobile height here */}
+              <Image
+                src={Img2Mobile}
+                alt="Hero Image 2 Mobile"
+                layout="intrinsic" // Keeps image aspect ratio consistent
+                width={500} // Define the width to scale on mobile
+                height={300} // Define the height for the mobile image
+                priority
+              />
+            </div>
+          ) : (
+            <div className="relative w-full h-[800px]">
+              {" "}
+              {/* Desktop height */}
+              <Image
+                src={Img4Desktop}
+                alt="Hero Image 2 Desktop"
                 layout="intrinsic" // Maintain desktop aspect ratio
                 width={1200} // Desktop width
                 height={800} // Desktop height

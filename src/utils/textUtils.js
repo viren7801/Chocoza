@@ -13,6 +13,7 @@ import img12 from "../images/BelgianCupcake.png";
 import img14 from "../images/kitkatCupcake.png";
 import img15 from "../images/oreoCupcake.png";
 import img16 from "../images/strawberryDreamCake.png";
+import img17 from "../images/giftHamper.png";
 
 
 
@@ -157,6 +158,13 @@ export const productsCard = [
     title: "Strawberry Vanilla",
     description: "A heavenly combination of rich chocolate cake layered with vanilla cream and fresh strawberries. A dreamy dessert for every special occasion!",
     image: img16,
+    isBestSeller: true,
+  },{
+    slug: "Gift-Hamper",
+    category: "Gift",
+    title: "Gift Hamper",
+    description: "Indulge in a delightful selection of handcrafted treats with our Chocoza Gift Hamper. This special hamper includes our delicious signature cupcakes and the rich, flavorful Fresh Pomegranate Chocolate, made with real pomegranate for a burst of fruity sweetness. Perfect for gifting or personal indulgence, this hamper is a luxurious combination of flavors that chocolate lovers will adore! ",
+    image: img17,
     isBestSeller: true,
   },
 ];
