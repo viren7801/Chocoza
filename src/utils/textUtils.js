@@ -14,6 +14,8 @@ import img14 from "../images/kitkatCupcake.png";
 import img15 from "../images/oreoCupcake.png";
 import img16 from "../images/strawberryDreamCake.png";
 import img17 from "../images/giftHamper.png";
+import img18 from "../images/kunafaDreamCake.png";
+import img19 from "../images/KunafaChocolate.png";
 
 
 
@@ -165,7 +167,23 @@ export const productsCard = [
     title: "Gift Hamper",
     description: "Indulge in a delightful selection of handcrafted treats with our Chocoza Gift Hamper. This special hamper includes our delicious signature cupcakes and the rich, flavorful Fresh Pomegranate Chocolate, made with real pomegranate for a burst of fruity sweetness. Perfect for gifting or personal indulgence, this hamper is a luxurious combination of flavors that chocolate lovers will adore! ",
     image: img17,
-    isBestSeller: true,
+    isBestSeller: false,
+  },
+  {
+    slug: "Kunafa-Dream-Cake",
+    category: "Dream Cake",
+    title: "Kunafa Dream Cake",
+    description: "Indulge in Layers of Delight! Our Kunafa Dream Cake is the perfect fusion of crispy kunafa and rich, creamy goodness. A dream come true in every bite!",
+    image: img18,
+    isBestSeller: false,
+  },
+  {
+    slug: "Kunafa-Chocolate",
+    category: "Chocolate",
+    title: "Kunafa Chocolate",
+    description: "A Chocolate Lover’s Kunafa Dream! Crispy kunafa meets luscious chocolate for an irresistible fusion of flavors. One bite, and you’re hooked!",
+    image: img19,
+    isBestSeller: false,
   },
 ];
 
