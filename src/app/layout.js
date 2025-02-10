@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Indulging in the art of homemade Chocolates🍫& Cupcakes🧁 Rich, and irresistibly sweet. Order yours today✨",
   icons: {
-    icon: "/favicon.png", // Ensure the favicon.ico is inside the public folder
+    icon: "/favicon.png",
   },
 };
 

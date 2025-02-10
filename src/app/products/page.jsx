@@ -12,7 +12,7 @@ export default function Products() {
           {productsCard.map((card) => (
             <ProductCard
               key={card.slug}
-              slug={card.slug} // ✅ Pass slug to ProductCard
+              slug={card.slug}
               category={card.category}
               title={card.title}
               image={card.image}
