@@ -163,7 +163,7 @@ export const productsCard = [
     isBestSeller: true,
   },{
     slug: "Gift-Hamper",
-    category: "Gift",
+    category: "Gift Hamper",
     title: "Gift Hamper",
     description: "Indulge in a delightful selection of handcrafted treats with our Chocoza Gift Hamper. This special hamper includes our delicious signature cupcakes and the rich, flavorful Fresh Pomegranate Chocolate, made with real pomegranate for a burst of fruity sweetness. Perfect for gifting or personal indulgence, this hamper is a luxurious combination of flavors that chocolate lovers will adore! ",
     image: img17,

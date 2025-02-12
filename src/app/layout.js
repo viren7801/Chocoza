@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import { Poppins } from "next/font/google";
 // pages/_app.js
 import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the FontAwesome styles
-config.autoAddCss = false; // Disable the auto-adding of CSS by FontAwesome
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false; 
 
 
 const poppins = Poppins({

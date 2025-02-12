@@ -91,7 +91,7 @@ function FifthContainer() {
         </div>
 
         {/* Right: Text Section */}
-        <div className="w-full sm:w-1/2 text-center sm:text-left max-w-[50%]">
+        <div className="w-full sm:w-1/2 text-center sm:text-left max-w-[80%]">
           <h1 className="text-[#713f12] text-3xl font-semibold">
             Exclusive Hampers for Unforgettable Moments!
           </h1>
