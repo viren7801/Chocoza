@@ -1,72 +1,57 @@
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { productsCard } from "@/utils/textUtils";
 import Link from "next/link";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import { notFound } from "next/navigation";
+import { ArrowLeft, ArrowUpRight, MessageCircle, MapPin } from "lucide-react";
+import { getWhatsAppLink, products } from "@/data/catalog";
 
-export default function ProductDetail({ params }) {
-  const product = productsCard.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const product = products.find((item) => item.slug === slug);
+  if (!product) return { title: "Product not found" };
+  return {
+    title: product.name,
+    description: product.description,
+  };
+}
 
-  if (!product) return notFound(); // Show 404 if product not found
+export default async function ProductDetail({ params }) {
+  const { slug } = await params;
+  const product = products.find((item) => item.slug === slug);
 
-  const phoneNumber = "+919409664446";
-  const message = `I want to buy the ${product.title} from Chocoza!`;
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message
-  )}`;
+  if (!product) notFound();
+
+  const orderLink = getWhatsAppLink(
+    "Hi Chocoza! I am interested in " + product.name + ". Please share today's availability and pickup details."
+  );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#fcecdb] py-10 px-4">
-      <div className="w-[90%] md:w-3/4 bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row gap-8 relative">
-        {/* Back Button in Upper Left Corner */}
-        <Link
-          href="/products"
-          className="absolute top-4 left-4 text-[#713f12] flex items-center gap-1 hover:text-[#a75c32] transition-all"
-        >
-          <i className="fas fa-arrow-left"></i> {/* FontAwesome Back Arrow */}
-          <span className="text-sm font-medium">Back</span>
-        </Link>
-
-        {/* Left Side - Product Image */}
-        <div className="w-full md:w-1/2">
-          <Image
-            src={product.image}
-            alt={product.title}
-            width={500}
-            height={500}
-            className="rounded-lg object-cover w-full h-auto"
-            priority
-          />
+    <>
+      <section className="section-shell product-detail">
+        <Link href="/products" className="product-back"><ArrowLeft size={15} /> Back to collection</Link>
+        <div className="product-detail-grid">
+          <div className="product-detail-image">
+            {product.badge && <span className="product-badge">{product.badge}</span>}
+            <Image src={product.image} alt={product.name} fill priority sizes="(max-width: 760px) 100vw, 50vw" />
+          </div>
+          <div className="product-detail-copy">
+            <div className="eyebrow">{product.category}</div>
+            <h1>{product.name}</h1>
+            <p className="product-detail-description">{product.description}</p>
+            <div className="product-detail-price">
+              {product.price !== null ? "₹" + product.price : product.priceLabel}
+            </div>
+            <p className="product-detail-note">Message us to confirm today's availability, quantity and pickup time. No online payment or delivery checkout.</p>
+            <a className="button-primary" href={orderLink} target="_blank" rel="noopener noreferrer">
+              <MessageCircle size={16} /> Enquire on WhatsApp <ArrowUpRight size={15} />
+            </a>
+            <div className="product-detail-pickup"><MapPin size={15} /> Local pickup in Navsari, Gujarat</div>
+          </div>
         </div>
-
-        {/* Right Side - Product Details */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center">
-          <h1 className="text-3xl font-bold text-[#713f12] mb-4">
-            {product.title}
-          </h1>
-          <p className="text-gray-700 text-lg">{product.category}</p>
-
-          {/* Description */}
-          <p className="mt-4 text-gray-600">{product.description}</p>
-
-          {/* Best Seller Tag */}
-          {product.isBestSeller && (
-            <span className="mt-2 text-xs bg-yellow-400 px-2 py-1 rounded-full inline-block">
-              Best Seller
-            </span>
-          )}
-
-          {/* Buy Now Button */}
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 px-6 py-3 text-white bg-[#713f12] rounded-lg hover:bg-[#a75c32] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#713f12] text-center w-full md:w-auto"
-          >
-            Buy Now
-          </a>
-        </div>
+      </section>
+      <div className="pickup-band">
+        <strong>Freshly made, personally confirmed.</strong>
+        <span>Your order is confirmed with the Chocoza team on WhatsApp before collection.</span>
       </div>
-    </div>
+    </>
   );
 }

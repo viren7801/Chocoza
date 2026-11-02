@@ -1,89 +1,69 @@
-import cartoonImg from "@/images/cartoon.png";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Heart, Leaf, Sparkles } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import storyImage from "@/images/overlayImage.jpg";
+
+export const metadata = {
+  title: "Our Story",
+  description: "The story behind Chocoza — handcrafted chocolates and bakes made with love in Navsari, Gujarat.",
+};
 
 export default function AboutUs() {
   return (
-    <div className="px-8 sm:px-32 py-10 bg-[#faf3e4]">
-      {/* Our Story Section */}
-      <section className="flex flex-col sm:flex-row justify-center items-center h-screen space-y-10 sm:space-y-0">
-        {/* Left: Image Section */}
-        <div className="w-full sm:w-1/2 flex justify-center">
-          <Image
-            src={cartoonImg}
-            alt="cartoon-image"
-            className="rounded-2xl shadow-lg"
-            width={500}
-            height={500}
-          />
-        </div>
-
-        {/* Right: Text Section */}
-        <div className="w-full sm:w-1/2 space-y-6">
-          <h1 className="text-[#713f12] text-4xl font-semibold text-center sm:text-left">
-            Our Story
-          </h1>
-          <p className="text-[#a16207] text-lg sm:text-xl leading-relaxed">
-            Chocoza began as a simple homemade venture fueled by a passion for
-            creating delightful chocolates and cupcakes. With a love for
-            crafting unique treats, we’ve grown into a brand cherished by many.
-            From our kitchen to your homes, we’ve been on a journey to make
-            every celebration sweeter with creations like our iconic Chocoblast
-            and Strawberry Vanilla Dream Cake. Now, we’re taking the next step –
-            opening our very first outlets to bring Chocoza closer to you!
-          </p>
+    <>
+      <section className="page-intro">
+        <div className="section-shell">
+          <div className="eyebrow">A little about Chocoza</div>
+          <h1>Sweet things.<br />Made with feeling.</h1>
+          <p>We believe a thoughtful little treat can turn an ordinary day into something worth remembering.</p>
         </div>
       </section>
 
-      {/* Mission and Vision Section */}
-      <section className="py-20">
-        <div className="text-center mb-10">
-          <h1 className="text-[#713f12] text-4xl font-semibold">
-            Our Mission and Vision
-          </h1>
-        </div>
-        <div className="space-y-16">
-          {/* Mission */}
-          <div className="space-y-4">
-            <h2 className="text-[#713f12] text-2xl font-semibold text-center">
-              Our Mission
-            </h2>
-            <p className="text-[#a16207] text-lg sm:text-xl leading-relaxed text-center sm:text-justify">
-              At Chocoza, our mission is to spread happiness through the art of
-              crafting chocolates and cupcakes. We believe that desserts are
-              more than just sweet treats—they are expressions of joy, love, and
-              togetherness. With this belief, we are committed to creating
-              products that not only taste exceptional but also bring a sense of
-              warmth and delight to every occasion.
-              <br />
-              We take pride in using high-quality ingredients and combining them
-              with creativity and passion to craft unique and memorable flavors.
-              Whether it’s a cozy celebration at home or a grand event, we want
-              to be the brand you trust to make your moments extra special.
-            </p>
-          </div>
+      <section className="section-shell about-story-layout">
+        <Reveal className="about-story-image">
+          <Image src={storyImage} alt="A glimpse into the Chocoza kitchen" fill sizes="(max-width: 760px) 100vw, 50vw" />
+        </Reveal>
+        <Reveal className="about-story-copy" delay={100}>
+          <div className="eyebrow">From our kitchen to your moments</div>
+          <h2>Small batches.<br /><em>Big-hearted</em> treats.</h2>
+          <p>Chocoza is a homemade, pure-vegetarian chocolate and baking venture from Navsari, Gujarat. It grew from a simple love of making and sharing sweet things.</p>
+          <p>Today, we make handcrafted chocolates, NYC-style cookies, brownies and gift hampers. We keep the experience personal, prepare with care and make each order feel special.</p>
+          <Link href="/products" className="button-primary">Explore our collection <ArrowRight size={15} /></Link>
+        </Reveal>
+      </section>
 
-          {/* Vision */}
-          <div className="space-y-4">
-            <h2 className="text-[#713f12] text-2xl font-semibold text-center">
-              Our Vision
-            </h2>
-            <p className="text-[#a16207] text-lg sm:text-xl leading-relaxed text-center sm:text-justify">
-              Our vision is to grow Chocoza into a household name synonymous
-              with excellence in chocolates and cupcakes. While we’ve started as
-              a homemade business, we dream of becoming a brand with a strong
-              presence, both locally and beyond.
-              <br />
-              We envision opening outlets that reflect the essence of
-              Chocoza—welcoming, warm, and full of delicious creations. With
-              these outlets, we aim to create spaces where customers can not
-              only purchase their favorite treats but also experience the joy
-              and creativity behind our brand. As we expand, we remain dedicated
-              to maintaining the personal touch and quality that have defined
-              Chocoza from the beginning.
-            </p>
+      <section className="about-values">
+        <div className="section-shell">
+          <Reveal className="section-heading">
+            <div><div className="eyebrow">The Chocoza way</div><h2>Made with care, always.</h2></div>
+            <p>Three little things that shape every Chocoza experience.</p>
+          </Reveal>
+          <div className="about-value-grid">
+            <Reveal className="about-value-card">
+              <Leaf size={23} strokeWidth={1.5} />
+              <h3>Pure vegetarian</h3>
+              <p>Our homemade range is thoughtfully prepared as a pure-vegetarian offering.</p>
+            </Reveal>
+            <Reveal className="about-value-card" delay={90}>
+              <Heart size={23} strokeWidth={1.5} />
+              <h3>Made with love</h3>
+              <p>We care about the little details, from the first stir to the final wrap.</p>
+            </Reveal>
+            <Reveal className="about-value-card" delay={180}>
+              <Sparkles size={23} strokeWidth={1.5} />
+              <h3>Made for moments</h3>
+              <p>Everyday cravings, celebrations and gifting — there is a sweet Chocoza moment for all of them.</p>
+            </Reveal>
           </div>
         </div>
       </section>
-    </div>
+
+      <div className="pickup-band">
+        <span>✳</span>
+        <strong>Made in Navsari, Gujarat.</strong>
+        <span>Every order is confirmed personally on WhatsApp for local pickup.</span>
+      </div>
+    </>
   );
 }
