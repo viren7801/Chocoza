@@ -1,22 +1,39 @@
 import Footer from "@/components/Footer";
-import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Poppins } from "next/font/google";
-// pages/_app.js
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-config.autoAddCss = false; 
+import "./globals.css";
+import { DM_Sans, Playfair_Display } from "next/font/google";
 
-
-const poppins = Poppins({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
 });
 
 export const metadata = {
-  title: "Chocoza",
+  title: {
+    default: "Chocoza | Handcrafted Chocolates & Bakes",
+    template: "%s | Chocoza",
+  },
   description:
-    "Indulging in the art of homemade Chocolates🍫& Cupcakes🧁 Rich, and irresistibly sweet. Order yours today✨",
+    "Discover handcrafted chocolates, NYC-style cookies, brownies and custom gift hampers from Chocoza in Navsari, Gujarat. Browse the collection and order on WhatsApp for local pickup.",
+  keywords: [
+    "Chocoza",
+    "homemade chocolates Navsari",
+    "NYC cookies Navsari",
+    "brownies Navsari",
+    "custom chocolate hampers",
+  ],
+  openGraph: {
+    title: "Chocoza | A little piece of happiness",
+    description: "Handcrafted chocolates and bakes, made with love in Navsari.",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.png",
   },
@@ -25,10 +42,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={dmSans.className + " " + dmSans.variable + " " + playfair.variable}>
         <Navbar />
-        {children}
-        <Footer/>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
