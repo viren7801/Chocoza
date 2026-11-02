@@ -1,191 +1,60 @@
-"use client";
+import { ArrowUpRight, Instagram, Mail, MapPin, MessageCircle } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
-import { useState, useEffect } from "react";
+export const metadata = {
+  title: "Contact",
+  description: "Contact Chocoza in Navsari, Gujarat. Enquire about chocolates, cookies, brownies and custom hampers on WhatsApp.",
+};
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [responseMessage, setResponseMessage] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setResponseMessage("");
-
-    const phoneRegex = /^\d{10}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      setResponseMessage("Please enter a valid 10-digit phone number.");
-      setIsSubmitting(false);
-      setTimeout(() => setResponseMessage(""), 5000);
-      return;
-    }
-
-    const formDataEncoded = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      formDataEncoded.append(key, value);
-    });
-
-    try {
-      const res = await fetch("https://formspree.io/f/mqaelnkb", {
-        method: "POST",
-        body: formDataEncoded,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (res.ok) {
-        setResponseMessage("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      } else {
-        setResponseMessage("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      setResponseMessage("An error occurred. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-
-      // Remove the message after 5 seconds
-      setTimeout(() => {
-        setResponseMessage("");
-      }, 5000);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
-      <div className="flex flex-col md:flex-row bg-white max-w-5xl w-full rounded-lg shadow-lg">
-        {/* Left Side: Contact Information */}
-        <div className="md:w-1/2 p-8 bg-[#f7f3e9] rounded-l-lg flex flex-col justify-center">
-          <h2 className="text-2xl font-semibold text-[#713f12] mb-4">
-            Contact Us
-          </h2>
-          <p className="text-gray-700 text-lg mb-6">
-            We'd love to hear from you! Reach out with your questions or
-            feedback.
-          </p>
-          <p className="text-lg text-gray-700 mb-4">
-            <strong>Email:</strong> chocoza.chocolates@gmail.com
-          </p>
-          <p className="text-lg text-gray-700">
-            <strong>Phone:</strong> +91 94096 64446
-          </p>
+    <>
+      <section className="page-intro">
+        <div className="section-shell">
+          <div className="eyebrow">We would love to hear from you</div>
+          <h1>Let's make<br />something sweet.</h1>
+          <p>Have a question, a special request or a gifting idea? Reach out and we will help you find the right Chocoza treat.</p>
         </div>
+      </section>
 
-        {/* Right Side: Form */}
-        <div className="md:w-1/2 p-8">
-          <h2 className="text-2xl font-semibold text-[#713f12] mb-6">
-            Send a Message
-          </h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name Field */}
-            <div className="flex flex-col">
-              <label htmlFor="name" className="text-md text-gray-700 mb-1">
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a16207]"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
+      <section className="section-shell contact-layout">
+        <Reveal className="contact-intro">
+          <div className="eyebrow">Say hello</div>
+          <h2>Good conversations<br /><em>start here.</em></h2>
+          <p>For product availability, custom hampers, bulk enquiries and pickup arrangements, WhatsApp is the quickest way to reach us.</p>
+          <div className="contact-location"><MapPin size={17} /><span>Navsari, Gujarat, India<br /><small>Local pickup only · No delivery at the moment</small></span></div>
+        </Reveal>
 
-            {/* Email Field */}
-            <div className="flex flex-col">
-              <label htmlFor="email" className="text-md text-gray-700 mb-1">
-                Your Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a16207]"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            {/* Phone Field */}
-            <div className="flex flex-col">
-              <label htmlFor="phone" className="text-md text-gray-700 mb-1">
-                Your Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a16207]"
-                placeholder="Enter your phone number"
-                required
-              />
-            </div>
-
-            {/* Message Field */}
-            <div className="flex flex-col">
-              <label htmlFor="message" className="text-md text-gray-700 mb-1">
-                Your Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a16207]"
-                placeholder="Write your message here"
-                rows="4"
-                required
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                className="px-6 py-2 bg-[#a16207] text-white font-semibold rounded-lg hover:bg-[#713f12] transition duration-200"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </button>
-            </div>
-          </form>
-
-          {/* Response Message */}
-          {responseMessage && (
-            <div
-              className={`mt-4 p-4 text-center rounded-lg ${
-                responseMessage.includes("success")
-                  ? "bg-green-100 text-green-700"
-                  : "bg-red-100 text-red-700"
-              }`}
-            >
-              {responseMessage}
-            </div>
-          )}
+        <div className="contact-card-grid">
+          <Reveal className="contact-card">
+            <span className="contact-icon"><MessageCircle size={22} /></span>
+            <span className="contact-card-label">QUICK ENQUIRIES</span>
+            <h3>Chat on WhatsApp</h3>
+            <p>Ask about today's availability, prices or pickup timings.</p>
+            <a href="https://wa.me/919409664446?text=Hi%20Chocoza!%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Start a conversation <ArrowUpRight size={15} /></a>
+          </Reveal>
+          <Reveal className="contact-card" delay={90}>
+            <span className="contact-icon"><Instagram size={22} /></span>
+            <span className="contact-card-label">FOLLOW THE SWEETNESS</span>
+            <h3>Find us on Instagram</h3>
+            <p>See new creations, updates and a little behind the scenes.</p>
+            <a href="https://www.instagram.com/__chocoza__/" target="_blank" rel="noopener noreferrer">Follow @__chocoza__ <ArrowUpRight size={15} /></a>
+          </Reveal>
+          <Reveal className="contact-card" delay={180}>
+            <span className="contact-icon"><Mail size={22} /></span>
+            <span className="contact-card-label">OTHER ENQUIRIES</span>
+            <h3>Send us an email</h3>
+            <p>For detailed requests or collaboration enquiries, write to us.</p>
+            <a href="mailto:chocoza.chocolates@gmail.com">Email Chocoza <ArrowUpRight size={15} /></a>
+          </Reveal>
         </div>
+      </section>
+
+      <div className="pickup-band">
+        <MapPin size={17} />
+        <strong>Local pickup only.</strong>
+        <span>We confirm your order and collection details with you directly before it is prepared.</span>
       </div>
-    </div>
+    </>
   );
 }
