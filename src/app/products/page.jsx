@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Reveal from "@/components/Reveal";
@@ -43,12 +44,12 @@ export default function Products() {
             {filteredProducts.map((product, index) => (
               <Reveal key={product.slug} delay={(index % 3) * 65}>
                 <article className="catalog-card">
-                  <div className="product-photo">
+                  <Link href={"/products/" + product.slug} className="product-photo" aria-label={"View " + product.name}>
                     {product.badge && <span className="product-badge">{product.badge}</span>}
                     <Image src={product.image} alt={product.name} fill sizes="(max-width: 760px) 46vw, 31vw" />
-                  </div>
+                  </Link>
                   <div className="product-meta">
-                    <div><h3>{product.name}</h3><p>{product.category}</p></div>
+                    <div><h3><Link href={"/products/" + product.slug}>{product.name}</Link></h3><p>{product.category}</p></div>
                   </div>
                   <p className="catalog-description">{product.description}</p>
                   <div className="catalog-price">
