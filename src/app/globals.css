@@ -292,7 +292,7 @@ button { font: inherit; }
 .featured-section { padding: 100px 0 115px; background: #f4e8dc; }
 .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .product-card { min-width: 0; }
-.product-photo { position: relative; overflow: hidden; aspect-ratio: .9; background: #ead8c7; }
+.product-photo { display: block; position: relative; overflow: hidden; aspect-ratio: .9; background: #ead8c7; }
 .product-photo img { object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
 .product-card:hover .product-photo img { transform: scale(1.055); }
 .product-badge { position: absolute; top: 13px; left: 13px; z-index: 1; padding: 7px 10px; background: rgba(255,248,239,.91); color: #70432e; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
