@@ -8,7 +8,7 @@ export default function ProductCard({
   image,
   isBestSeller,
 }) {
-  const phoneNumber = "+919409664446";
+  const phoneNumber = "919328032419";
   const predefinedMessage = `I want to buy the ${title} from Chocoza!`;
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     predefinedMessage

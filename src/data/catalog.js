@@ -87,7 +87,7 @@ export const productCategories = [
 ];
 
 export function getWhatsAppLink(message) {
-  const link = new URL("https://wa.me/919409664446");
+  const link = new URL("https://wa.me/919328032419");
   link.searchParams.set("text", message);
   return link.toString();
 }

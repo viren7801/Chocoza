@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight, MessageCircle } from "lucide-react";
-import logo from "../images/logo_new.png";
 
 const links = [
   { label: "Home", href: "/" },
@@ -28,7 +27,7 @@ export default function Navbar() {
 
       <div className="nav-shell">
         <Link href="/" className="brand-mark" aria-label="Chocoza home" onClick={() => setOpen(false)}>
-          <Image src={logo} alt="Chocoza" width={142} height={64} priority />
+          <Image src="/chocoza-logo.webp" alt="Chocoza" width={80} height={80} priority />
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -45,7 +44,7 @@ export default function Navbar() {
 
         <a
           className="nav-order"
-          href="https://wa.me/919409664446?text=Hi%20Chocoza!%20I%27d%20like%20to%20know%20more%20about%20your%20products."
+          href="https://wa.me/919328032419?text=Hi%20Chocoza!%20I%27d%20like%20to%20know%20more%20about%20your%20products."
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -79,7 +78,7 @@ export default function Navbar() {
           </Link>
         ))}
         <a
-          href="https://wa.me/919409664446?text=Hi%20Chocoza!%20I%27d%20like%20to%20know%20more%20about%20your%20products."
+          href="https://wa.me/919328032419?text=Hi%20Chocoza!%20I%27d%20like%20to%20know%20more%20about%20your%20products."
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setOpen(false)}
