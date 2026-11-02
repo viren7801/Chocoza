@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../images/logo_new.png";
 import { ArrowUpRight, Instagram, Mail, MapPin, MessageCircle } from "lucide-react";
 
 export default function Footer() {
@@ -9,7 +8,7 @@ export default function Footer() {
       <div className="footer-main">
         <div className="footer-brand">
           <Link href="/" aria-label="Chocoza home">
-            <Image src={logo} alt="Chocoza" width={150} height={70} />
+            <Image src="/chocoza-logo.webp" alt="Chocoza" width={100} height={100} />
           </Link>
           <p>Handcrafted chocolates and bakes, made to make ordinary moments a little sweeter.</p>
           <a
@@ -31,7 +30,7 @@ export default function Footer() {
 
         <div className="footer-column">
           <p className="footer-eyebrow">SAY HELLO</p>
-          <a href="https://wa.me/919409664446" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/919328032419" target="_blank" rel="noopener noreferrer">
             <MessageCircle size={15} /> WhatsApp
           </a>
           <a href="mailto:chocoza.chocolates@gmail.com">

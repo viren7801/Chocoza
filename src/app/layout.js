@@ -35,7 +35,7 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon.png",
+    icon: "/chocoza-logo.webp",
   },
 };
 

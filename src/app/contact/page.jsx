@@ -31,7 +31,7 @@ export default function Contact() {
             <span className="contact-card-label">QUICK ENQUIRIES</span>
             <h3>Chat on WhatsApp</h3>
             <p>Ask about today's availability, prices or pickup timings.</p>
-            <a href="https://wa.me/919409664446?text=Hi%20Chocoza!%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Start a conversation <ArrowUpRight size={15} /></a>
+            <a href="https://wa.me/919328032419?text=Hi%20Chocoza!%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer">Start a conversation <ArrowUpRight size={15} /></a>
           </Reveal>
           <Reveal className="contact-card" delay={90}>
             <span className="contact-icon"><Instagram size={22} /></span>
