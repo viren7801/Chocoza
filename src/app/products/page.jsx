@@ -2,13 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { products, productCategories, getWhatsAppLink } from "@/data/catalog";
 
 export default function Products() {
   const [category, setCategory] = useState("All");
+
+  useEffect(() => {
+    const requestedCategory = new URLSearchParams(window.location.search).get("category");
+    if (requestedCategory && productCategories.includes(requestedCategory)) {
+      setCategory(requestedCategory);
+    }
+  }, []);
+
   const filteredProducts = useMemo(
     () => category === "All" ? products : products.filter((product) => product.category === category),
     [category]
