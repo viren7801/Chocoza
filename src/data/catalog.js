@@ -52,7 +52,7 @@ export const products = [
     category: "NYC Cookies",
     description: "A rich cocoa cookie loaded with chocolate chunks and finished with a chocolate drizzle.",
     price: 130,
-    image: "/double-chocolate-cookie.webp",
+    image: "/double-chocolate-cookie-v2.webp",
     badge: "Customer favourite",
   },
   {
