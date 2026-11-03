@@ -29,7 +29,7 @@ export default async function ProductDetail({ params }) {
       <section className="section-shell product-detail">
         <Link href="/products" className="product-back"><ArrowLeft size={15} /> Back to collection</Link>
         <div className="product-detail-grid">
-          <div className="product-detail-image">
+          <div className="product-detail-image" data-tilt>
             {product.badge && <span className="product-badge">{product.badge}</span>}
             <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : product.category === "Brownies" ? "brownie-box-image" : undefined} fill priority sizes="(max-width: 760px) 100vw, 50vw" />
           </div>
