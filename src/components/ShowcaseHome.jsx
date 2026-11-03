@@ -6,7 +6,6 @@ import { getWhatsAppLink, products } from "@/data/catalog";
 import chocoBlast from "@/images/ChocoBlast.png";
 import silkyChocolate from "@/images/silkyChocolate.png";
 import nuttyHearts from "@/images/nuttyHearts.png";
-import browniePhoto from "@/images/IMG_2394.jpg";
 import hamperImage from "@/images/Hamper2.png";
 import storyImage from "@/images/overlayImage.jpg";
 
@@ -16,7 +15,7 @@ const doubleChocolateCookie = "/double-chocolate-cookie.webp";
 const collections = [
   { title: "Chocolates", subtitle: "Little bites of joy", image: chocoBlast, href: "/products?category=Chocolates" },
   { title: "NYC Cookies", subtitle: "Two irresistible flavours", image: classicCookie, href: "/products?category=NYC%20Cookies" },
-  { title: "Brownies", subtitle: "Freshly baked comfort", image: browniePhoto, href: "/products?category=Brownies" },
+  { title: "Brownies", subtitle: "Box of 6 · assorted flavours", image: "/box-of-6-brownies.webp", href: "/products?category=Brownies" },
   { title: "Gift Hampers", subtitle: "Made for your moments", image: hamperImage, href: "/products?category=Gift%20Hampers" },
 ];
 
@@ -89,7 +88,7 @@ export default function ShowcaseHome() {
               <Reveal key={item.title} delay={index * 85}>
                 <Link href={item.href} className="collection-card">
                   <div className="collection-image">
-                    <Image src={item.image} alt={item.title + " by Chocoza"} className={item.title === "NYC Cookies" ? "cookie-image" : undefined} fill sizes="(max-width: 760px) 45vw, 24vw" />
+                    <Image src={item.image} alt={item.title + " by Chocoza"} className={item.title === "NYC Cookies" ? "cookie-image" : item.title === "Brownies" ? "brownie-box-image" : undefined} fill sizes="(max-width: 760px) 45vw, 24vw" />
                   </div>
                   <div className="collection-info">
                     <div><h3>{item.title}</h3><p>{item.subtitle}</p></div>

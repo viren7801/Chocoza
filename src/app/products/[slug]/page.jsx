@@ -31,7 +31,7 @@ export default async function ProductDetail({ params }) {
         <div className="product-detail-grid">
           <div className="product-detail-image">
             {product.badge && <span className="product-badge">{product.badge}</span>}
-            <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : undefined} fill priority sizes="(max-width: 760px) 100vw, 50vw" />
+            <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : product.category === "Brownies" ? "brownie-box-image" : undefined} fill priority sizes="(max-width: 760px) 100vw, 50vw" />
           </div>
           <div className="product-detail-copy">
             <div className="eyebrow">{product.category}</div>
