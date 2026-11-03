@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import MotionExperience from "@/components/MotionExperience";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { DM_Sans, Playfair_Display } from "next/font/google";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={dmSans.className + " " + dmSans.variable + " " + playfair.variable}>
+        <MotionExperience />
         <Navbar />
         <main>{children}</main>
         <Footer />
