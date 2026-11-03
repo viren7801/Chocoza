@@ -4,16 +4,18 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Heart, Leaf, MapPin, MessageCircle
 import Reveal from "@/components/Reveal";
 import { getWhatsAppLink, products } from "@/data/catalog";
 import chocoBlast from "@/images/ChocoBlast.png";
-import cookieChocolate from "@/images/cookieChocolate.png";
 import silkyChocolate from "@/images/silkyChocolate.png";
 import nuttyHearts from "@/images/nuttyHearts.png";
 import browniePhoto from "@/images/IMG_2394.jpg";
 import hamperImage from "@/images/Hamper2.png";
 import storyImage from "@/images/overlayImage.jpg";
 
+const classicCookie = "/classic-cookie.webp";
+const doubleChocolateCookie = "/double-chocolate-cookie.webp";
+
 const collections = [
   { title: "Chocolates", subtitle: "Little bites of joy", image: chocoBlast, href: "/products?category=Chocolates" },
-  { title: "NYC Cookies", subtitle: "Big, soft & indulgent", image: cookieChocolate, href: "/products?category=NYC%20Cookies" },
+  { title: "NYC Cookies", subtitle: "Two irresistible flavours", image: classicCookie, href: "/products?category=NYC%20Cookies" },
   { title: "Brownies", subtitle: "Freshly baked comfort", image: browniePhoto, href: "/products?category=Brownies" },
   { title: "Gift Hampers", subtitle: "Made for your moments", image: hamperImage, href: "/products?category=Gift%20Hampers" },
 ];
@@ -21,7 +23,7 @@ const collections = [
 const featured = [
   { ...products[0], image: chocoBlast },
   { ...products[2], image: nuttyHearts },
-  { ...products[5], image: cookieChocolate },
+  { ...products[5], image: doubleChocolateCookie },
   { ...products[1], image: silkyChocolate },
 ];
 
@@ -87,7 +89,7 @@ export default function ShowcaseHome() {
               <Reveal key={item.title} delay={index * 85}>
                 <Link href={item.href} className="collection-card">
                   <div className="collection-image">
-                    <Image src={item.image} alt={item.title + " by Chocoza"} fill sizes="(max-width: 760px) 45vw, 24vw" />
+                    <Image src={item.image} alt={item.title + " by Chocoza"} className={item.title === "NYC Cookies" ? "cookie-image" : undefined} fill sizes="(max-width: 760px) 45vw, 24vw" />
                   </div>
                   <div className="collection-info">
                     <div><h3>{item.title}</h3><p>{item.subtitle}</p></div>
@@ -117,7 +119,7 @@ export default function ShowcaseHome() {
                 <article className="product-card">
                   <div className="product-photo">
                     {product.badge && <span className="product-badge">{product.badge}</span>}
-                    <Image src={product.image} alt={product.name} fill sizes="(max-width: 760px) 44vw, 23vw" />
+                    <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : undefined} fill sizes="(max-width: 760px) 44vw, 23vw" />
                   </div>
                   <div className="product-meta">
                     <div><h3>{product.name}</h3><p>{product.category}</p></div>

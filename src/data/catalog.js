@@ -1,7 +1,6 @@
 import chocoBlast from "@/images/ChocoBlast.png";
 import nuttyHearts from "@/images/nuttyHearts.png";
 import silkyChocolate from "@/images/silkyChocolate.png";
-import cookieChocolate from "@/images/cookieChocolate.png";
 import browniePhoto from "@/images/IMG_2394.jpg";
 import giftHamper from "@/images/Hamper2.png";
 
@@ -42,19 +41,19 @@ export const products = [
   },
   {
     slug: "classic-nyc-cookie",
-    name: "Classic NYC Cookie",
+    name: "Classic Cookie",
     category: "NYC Cookies",
-    description: "A chunky, freshly baked cookie with a soft centre.",
+    description: "A chunky, golden cookie with a soft centre and a generous chocolate drizzle.",
     price: 120,
-    image: cookieChocolate,
+    image: "/classic-cookie.webp",
   },
   {
     slug: "double-chocolate-cookie",
     name: "Double Chocolate Cookie",
     category: "NYC Cookies",
-    description: "A rich chocolate cookie for serious chocolate cravings.",
+    description: "A rich cocoa cookie loaded with chocolate chunks and finished with a chocolate drizzle.",
     price: 130,
-    image: cookieChocolate,
+    image: "/double-chocolate-cookie.webp",
     badge: "Customer favourite",
   },
   {

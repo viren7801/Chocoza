@@ -282,6 +282,7 @@ button { font: inherit; }
 }
 .collection-image { position: relative; aspect-ratio: .93; overflow: hidden; background: #ead5c0; }
 .collection-image img { transition: transform .7s cubic-bezier(.2,.7,.2,1); object-fit: cover; }
+.collection-image img.cookie-image { object-fit: contain; padding: 14px; }
 .collection-card:hover .collection-image img { transform: scale(1.055); }
 .collection-info { min-height: 86px; display: flex; align-items: center; justify-content: space-between; padding: 17px 18px; background: #f5e8dc; }
 .collection-info h3 { margin: 0; font-family: var(--font-display), Georgia, serif; font-size: 21px; font-weight: 500; }
@@ -294,6 +295,7 @@ button { font: inherit; }
 .product-card { min-width: 0; }
 .product-photo { display: block; position: relative; overflow: hidden; aspect-ratio: .9; background: #ead8c7; }
 .product-photo img { object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.product-photo img.cookie-image { object-fit: contain; padding: clamp(12px, 3vw, 22px); }
 .product-card:hover .product-photo img { transform: scale(1.055); }
 .product-badge { position: absolute; top: 13px; left: 13px; z-index: 1; padding: 7px 10px; background: rgba(255,248,239,.91); color: #70432e; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
 .product-meta { display: flex; align-items: start; justify-content: space-between; gap: 12px; padding: 15px 2px 0; }
@@ -538,6 +540,7 @@ button { font: inherit; }
 .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(35px, 7vw, 90px); }
 .product-detail-image { position: relative; min-height: 560px; overflow: hidden; background: #ead8c7; }
 .product-detail-image img { object-fit: contain; }
+.product-detail-image img.cookie-image { padding: clamp(22px, 5vw, 58px); }
 .product-detail-copy h1 { margin: 16px 0 18px; color: var(--cocoa-deep); font-family: var(--font-display), Georgia, serif; font-size: clamp(45px, 5.5vw, 68px); font-weight: 500; letter-spacing: -.05em; line-height: 1.02; }
 .product-detail-description { max-width: 440px; color: #8c6e59; font-size: 13px; line-height: 1.9; }
 .product-detail-price { margin-top: 22px; color: #70412c; font-size: 15px; font-weight: 600; }
