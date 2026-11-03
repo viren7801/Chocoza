@@ -1,7 +1,6 @@
 import chocoBlast from "@/images/ChocoBlast.png";
 import nuttyHearts from "@/images/nuttyHearts.png";
 import silkyChocolate from "@/images/silkyChocolate.png";
-import browniePhoto from "@/images/IMG_2394.jpg";
 import giftHamper from "@/images/Hamper2.png";
 
 export const products = [
@@ -58,12 +57,12 @@ export const products = [
   },
   {
     slug: "brownies",
-    name: "Brownies",
+    name: "Box of 6 Brownies",
     category: "Brownies",
-    description: "Freshly baked, fudgy treats. Message us for available flavours.",
-    price: null,
-    priceLabel: "Ask for flavours & price",
-    image: browniePhoto,
+    description: "A box of six fudgy brownies. Individual 100g flavours: Classic Chocolate Chips ₹120; Milk Chocolate Drizzle ₹150; Dark Chocolate Drizzle ₹150; Triple Chocolate (dark + milk chocolate chips) ₹150; Nutella Drizzle ₹150; Walnut Topping ₹150.",
+    price: 600,
+    image: "/box-of-6-brownies.webp",
+    badge: "Box of 6",
   },
   {
     slug: "gift-hampers",
