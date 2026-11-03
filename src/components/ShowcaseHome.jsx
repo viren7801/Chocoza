@@ -10,7 +10,7 @@ import hamperImage from "@/images/Hamper2.png";
 import storyImage from "@/images/overlayImage.jpg";
 
 const classicCookie = "/classic-cookie.webp";
-const doubleChocolateCookie = "/double-chocolate-cookie.webp";
+const doubleChocolateCookie = "/double-chocolate-cookie-v2.webp";
 
 const collections = [
   { title: "Chocolates", subtitle: "Little bites of joy", image: chocoBlast, href: "/products?category=Chocolates" },
