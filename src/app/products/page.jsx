@@ -51,7 +51,7 @@ export default function Products() {
           <div className="catalog-grid">
             {filteredProducts.map((product, index) => (
               <Reveal key={product.slug} delay={(index % 3) * 65}>
-                <article className="catalog-card">
+                <article className="catalog-card" data-tilt>
                   <Link href={"/products/" + product.slug} className="product-photo" aria-label={"View " + product.name}>
                     {product.badge && <span className="product-badge">{product.badge}</span>}
                     <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : product.category === "Brownies" ? "brownie-box-image" : undefined} fill sizes="(max-width: 760px) 46vw, 31vw" />
