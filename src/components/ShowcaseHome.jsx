@@ -52,13 +52,17 @@ export default function ShowcaseHome() {
           </Reveal>
         </div>
 
-        <div className="hero-art">
+        <div className="hero-art" data-tilt>
           <div className="hero-orbit" />
           <div className="hero-vertical">A SWEET MOMENT · CHOCOZA</div>
           <div className="hero-product">
             <Image src={chocoBlast} alt="Chocoza signature Chocoblast chocolate" fill priority sizes="(max-width: 760px) 92vw, 48vw" />
           </div>
           <div className="hero-stamp">A little<br />extra love<br />in every bite</div>
+          <div className="hero-float-note hero-float-note--left"><Sparkles size={13} /> SMALL BATCH MAGIC</div>
+          <div className="hero-float-note hero-float-note--right"><Leaf size={13} /> PURE VEG ALWAYS</div>
+          <span className="hero-orbit-spark hero-orbit-spark--one">✳</span>
+          <span className="hero-orbit-spark hero-orbit-spark--two">✧</span>
         </div>
       </section>
 
@@ -86,7 +90,7 @@ export default function ShowcaseHome() {
           <div className="collection-grid">
             {collections.map((item, index) => (
               <Reveal key={item.title} delay={index * 85}>
-                <Link href={item.href} className="collection-card">
+                <Link href={item.href} className="collection-card" data-tilt>
                   <div className="collection-image">
                     <Image src={item.image} alt={item.title + " by Chocoza"} className={item.title === "NYC Cookies" ? "cookie-image" : item.title === "Brownies" ? "brownie-box-image" : undefined} fill sizes="(max-width: 760px) 45vw, 24vw" />
                   </div>
@@ -115,7 +119,7 @@ export default function ShowcaseHome() {
           <div className="product-grid">
             {featured.map((product, index) => (
               <Reveal key={product.slug} delay={index * 70}>
-                <article className="product-card">
+                <article className="product-card" data-tilt>
                   <div className="product-photo">
                     {product.badge && <span className="product-badge">{product.badge}</span>}
                     <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : undefined} fill sizes="(max-width: 760px) 44vw, 23vw" />
@@ -148,7 +152,7 @@ export default function ShowcaseHome() {
       </section>
 
       <section className="section-shell gift-section">
-        <Reveal className="gift-art">
+        <Reveal className="gift-art" >
           <Image src={hamperImage} alt="Chocoza custom chocolate and bakery gift hamper" fill sizes="(max-width: 760px) 100vw, 50vw" />
         </Reveal>
         <Reveal className="gift-copy" delay={100}>
