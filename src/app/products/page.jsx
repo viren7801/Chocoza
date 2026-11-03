@@ -54,7 +54,7 @@ export default function Products() {
                 <article className="catalog-card">
                   <Link href={"/products/" + product.slug} className="product-photo" aria-label={"View " + product.name}>
                     {product.badge && <span className="product-badge">{product.badge}</span>}
-                    <Image src={product.image} alt={product.name} fill sizes="(max-width: 760px) 46vw, 31vw" />
+                    <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : undefined} fill sizes="(max-width: 760px) 46vw, 31vw" />
                   </Link>
                   <div className="product-meta">
                     <div><h3><Link href={"/products/" + product.slug}>{product.name}</Link></h3><p>{product.category}</p></div>
