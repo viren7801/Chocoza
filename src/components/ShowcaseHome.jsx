@@ -6,7 +6,7 @@ import { getWhatsAppLink, products } from "@/data/catalog";
 import chocoBlast from "@/images/ChocoBlast.png";
 import silkyChocolate from "@/images/silkyChocolate.png";
 import nuttyHearts from "@/images/nuttyHearts.png";
-import hamperImage from "@/images/Hamper2.png";
+const hamperImage = "/custom-gift-hamper.webp";
 import storyImage from "@/images/overlayImage.jpg";
 
 const classicCookie = "/classic-cookie.webp";
