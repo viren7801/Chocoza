@@ -8,6 +8,7 @@ import silkyChocolate from "@/images/silkyChocolate.png";
 import nuttyHearts from "@/images/nuttyHearts.png";
 const hamperImage = "/custom-gift-hamper.webp";
 import storyImage from "@/images/overlayImage.jpg";
+const brownieBox = "/box-of-6-brownies.webp";
 
 const classicCookie = "/classic-cookie.webp";
 const doubleChocolateCookie = "/double-chocolate-cookie.webp";
@@ -15,15 +16,17 @@ const doubleChocolateCookie = "/double-chocolate-cookie.webp";
 const collections = [
   { title: "Chocolates", subtitle: "Little bites of joy", image: chocoBlast, href: "/products?category=Chocolates" },
   { title: "NYC Cookies", subtitle: "Two irresistible flavours", image: classicCookie, href: "/products?category=NYC%20Cookies" },
-  { title: "Brownies", subtitle: "Box of 6 · assorted flavours", image: "/box-of-6-brownies.webp", href: "/products?category=Brownies" },
+  { title: "Cookie Tins", subtitle: "Five flavours · two sizes", image: classicCookie, href: "/products?category=Cookie%20Tins" },
+  { title: "Brownies", subtitle: "Six flavours · box of 6", image: "/box-of-6-brownies.webp", href: "/products?category=Brownies" },
+  { title: "Special Items", subtitle: "Made for celebrations", image: brownieBox, href: "/products?category=Special%20Items" },
   { title: "Gift Hampers", subtitle: "Made for your moments", image: hamperImage, href: "/products?category=Gift%20Hampers" },
 ];
 
 const featured = [
-  { ...products[0], image: chocoBlast },
-  { ...products[2], image: nuttyHearts },
-  { ...products[5], image: doubleChocolateCookie },
-  { ...products[1], image: silkyChocolate },
+  { ...products.find((item) => item.slug === "chocoblast"), image: chocoBlast },
+  { ...products.find((item) => item.slug === "fruit-and-nut"), image: nuttyHearts },
+  { ...products.find((item) => item.slug === "double-chocolate-cookie"), image: doubleChocolateCookie },
+  { ...products.find((item) => item.slug === "classic-homemade-chocolate"), image: silkyChocolate },
 ];
 
 export default function ShowcaseHome() {
