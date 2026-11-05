@@ -108,7 +108,7 @@ export const products = [
     description: "Freshly baked cookie tins in five delicious flavours. Choose a 100g or 300g tin.",
     price: null,
     priceLabel: "From ₹100",
-    image: classicCookie,
+    image: "/cookie-tins-menu.webp",
     variants: [
       { label: "Classic · 100g", price: 100 },
       { label: "Classic · 300g", price: 300 },
@@ -165,7 +165,7 @@ export const products = [
     description: "A creamy orange posset, served inside a fresh orange shell.",
     weight: "1 piece",
     price: 200,
-    image: silkyChocolate,
+    image: "/orange-posset-menu.webp",
   },
   {
     slug: "brownie-cake",
