@@ -1,7 +1,7 @@
 import chocoBlast from "@/images/ChocoBlast.png";
 import nuttyHearts from "@/images/nuttyHearts.png";
 import silkyChocolate from "@/images/silkyChocolate.png";
-import giftHamper from "@/images/Hamper2.png";
+const giftHamper = "/custom-gift-hamper.webp";
 
 export const products = [
   {
