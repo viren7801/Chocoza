@@ -40,6 +40,27 @@ export default async function ProductDetail({ params }) {
             <div className="product-detail-price">
               {product.price !== null ? "₹" + product.price : product.priceLabel}
             </div>
+            {product.variants?.length > 0 && (
+              <div className="product-detail-variants">
+                <h2>{product.variantTitle || "Available options"}</h2>
+                <ul>
+                  {product.variants.map((variant) => (
+                    <li key={variant.name}>
+                      <div>
+                        <strong>{variant.name}</strong>
+                        {variant.detail && <small>{variant.detail}</small>}
+                      </div>
+                      <span>
+                        {variant.prices
+                          ? variant.prices.map((option) => option.label + " ₹" + option.price).join(" · ")
+                          : variant.label + " · ₹" + variant.price}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {product.extraNote && <p className="product-detail-note">{product.extraNote}</p>}
             <p className="product-detail-note">Message us to confirm today's availability, quantity and pickup time. No online payment or delivery checkout.</p>
             <a className="button-primary" href={orderLink} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={16} /> Enquire on WhatsApp <ArrowUpRight size={15} />
