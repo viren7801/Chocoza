@@ -60,6 +60,12 @@ export default function Products() {
                     <div><h3><Link href={"/products/" + product.slug}>{product.name}</Link></h3><p>{product.category}</p></div>
                   </div>
                   <p className="catalog-description">{product.description}</p>
+                  {product.variants?.length > 0 && (
+                    <p className="catalog-variant-count">
+                      {product.variants.length} options · See sizes and prices
+                    </p>
+                  )}
+                  {product.extraNote && <p className="catalog-variant-count">{product.extraNote}</p>}
                   <div className="catalog-price">
                     {product.price !== null ? "₹" + product.price : product.priceLabel}
                   </div>
