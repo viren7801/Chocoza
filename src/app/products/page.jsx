@@ -28,12 +28,13 @@ export default function Products() {
         <div className="section-shell">
           <div className="eyebrow">The Chocoza collection</div>
           <h1>Something sweet<br />for every mood.</h1>
-          <p>Explore our chocolates, NYC-style cookies, brownies and thoughtful gift hampers. Availability can change with each small batch, so message us before visiting.</p>
+          <p>Explore handcrafted chocolates, NYC-style cookies, cookie tins, brownies, celebration bakes and custom gift hampers. Availability can change with each small batch, so message us before visiting.</p>
         </div>
       </section>
 
       <section className="section">
         <div className="section-shell">
+          <p className="catalog-menu-note">Sugar-free chocolate option: add ₹20 to any listed chocolate flavour. Cookie tins are available in 100g and 300g sizes.</p>
           <div className="catalog-filters" aria-label="Filter products by category">
             {productCategories.map((item) => (
               <button
@@ -57,11 +58,11 @@ export default function Products() {
                     <Image src={product.image} alt={product.name} className={product.category === "Gift Hampers" ? "hamper-image" : product.category === "NYC Cookies" ? "cookie-image" : product.category === "Brownies" ? "brownie-box-image" : undefined} fill quality={92} sizes="(max-width: 760px) 46vw, 31vw" />
                   </Link>
                   <div className="product-meta">
-                    <div><h3><Link href={"/products/" + product.slug}>{product.name}</Link></h3><p>{product.category}</p></div>
+                    <div><h3><Link href={"/products/" + product.slug}>{product.name}</Link></h3><p>{product.category}{product.weight ? " · " + product.weight : ""}</p></div>
                   </div>
                   <p className="catalog-description">{product.description}</p>
                   <div className="catalog-price">
-                    {product.price !== null ? "₹" + product.price : product.priceLabel}
+                    {product.priceLabel || (product.price !== null ? "₹" + product.price : "Ask for current price")}
                   </div>
                   <a
                     className="catalog-order"

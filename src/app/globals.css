@@ -832,3 +832,52 @@ button { font: inherit; }
   pointer-events: none;
 }
 .catalog-card[data-tilt]:hover .product-photo::after { left: 140%; }
+
+
+/* Menu options and price lists */
+.catalog-menu-note {
+  margin: 0 0 20px;
+  padding: 13px 16px;
+  border-left: 2px solid #b9845d;
+  background: #f5e8dc;
+  color: #815f49;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.product-variants {
+  max-width: 440px;
+  margin-top: 20px;
+}
+.product-variants h2 {
+  margin: 0 0 10px;
+  color: var(--cocoa-deep);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+.product-variant-list {
+  border-top: 1px solid rgba(112, 65, 44, .18);
+}
+.product-variant {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(112, 65, 44, .13);
+  color: #76543e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.product-variant strong {
+  flex: 0 0 auto;
+  color: #70412c;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.product-variant small {
+  display: block;
+  color: #9a7d67;
+  font-size: 10px;
+}

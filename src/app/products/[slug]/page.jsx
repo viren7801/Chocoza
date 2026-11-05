@@ -34,12 +34,26 @@ export default async function ProductDetail({ params }) {
             <Image src={product.image} alt={product.name} className={product.category === "Gift Hampers" ? "hamper-image" : product.category === "NYC Cookies" ? "cookie-image" : product.category === "Brownies" ? "brownie-box-image" : undefined} fill priority quality={92} sizes="(max-width: 760px) 100vw, 50vw" />
           </div>
           <div className="product-detail-copy">
-            <div className="eyebrow">{product.category}</div>
+            <div className="eyebrow">{product.category}{product.weight ? " · " + product.weight : ""}</div>
             <h1>{product.name}</h1>
             <p className="product-detail-description">{product.description}</p>
             <div className="product-detail-price">
-              {product.price !== null ? "₹" + product.price : product.priceLabel}
+              {product.priceLabel || (product.price !== null ? "₹" + product.price : "Ask for current price")}
             </div>
+            {product.variants?.length > 0 && (
+              <div className="product-variants">
+                <h2>Available options</h2>
+                <div className="product-variant-list">
+                  {product.variants.map((variant) => (
+                    <div className="product-variant" key={variant.label}>
+                      <span>{variant.label}{variant.note ? <small>{variant.note}</small> : null}</span>
+                      <strong>₹{variant.price}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {product.optionNote && <p className="product-detail-note">{product.optionNote}</p>}
             <p className="product-detail-note">Message us to confirm today's availability, quantity and pickup time. No online payment or delivery checkout.</p>
             <a className="button-primary" href={orderLink} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={16} /> Enquire on WhatsApp <ArrowUpRight size={15} />
