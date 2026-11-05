@@ -92,7 +92,7 @@ export default function ShowcaseHome() {
               <Reveal key={item.title} delay={index * 85}>
                 <Link href={item.href} className="collection-card" data-tilt>
                   <div className="collection-image">
-                    <Image src={item.image} alt={item.title + " by Chocoza"} className={item.title === "NYC Cookies" ? "cookie-image" : item.title === "Brownies" ? "brownie-box-image" : undefined} fill sizes="(max-width: 760px) 45vw, 24vw" />
+                    <Image src={item.image} alt={item.title + " by Chocoza"} className={item.title === "Gift Hampers" ? "hamper-image" : item.title === "NYC Cookies" ? "cookie-image" : item.title === "Brownies" ? "brownie-box-image" : undefined} fill quality={92} sizes="(max-width: 760px) 45vw, 24vw" />
                   </div>
                   <div className="collection-info">
                     <div><h3>{item.title}</h3><p>{item.subtitle}</p></div>
@@ -153,7 +153,7 @@ export default function ShowcaseHome() {
 
       <section className="section-shell gift-section">
         <Reveal className="gift-art" >
-          <Image src={hamperImage} alt="Chocoza custom chocolate and bakery gift hamper" fill sizes="(max-width: 760px) 100vw, 50vw" />
+          <Image src={hamperImage} alt="Chocoza custom chocolate and bakery gift hamper" fill quality={92} sizes="(max-width: 760px) 100vw, 50vw" />
         </Reveal>
         <Reveal className="gift-copy" delay={100}>
           <div className="eyebrow">A gift with a little more meaning</div>
