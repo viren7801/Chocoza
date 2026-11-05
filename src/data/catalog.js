@@ -159,7 +159,7 @@ export const products = [
     name: "Orange Posset",
     category: "Special Items",
     description: "A creamy orange posset served inside a fresh orange shell.",
-    price: 200,
+    price: null,
     priceLabel: "₹200 · 1 piece",
     image: pomegranateChocolate,
   },
