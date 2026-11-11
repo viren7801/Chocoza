@@ -1241,3 +1241,39 @@ button { font: inherit; }
   .horizontal-product-card__image img { transition: none; }
   .horizontal-showcase__track { transform: none; }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .choco-story { height: auto; }
+  .choco-story__pin {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+  }
+  .choco-story__steps { min-height: 0; }
+  .choco-story__step {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    transform: none;
+    margin-bottom: 20px;
+    pointer-events: auto;
+  }
+  .choco-story__progress, .choco-story__index { display: none; }
+  .horizontal-showcase { height: auto; padding: 60px 0; }
+  .horizontal-showcase__pin {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+  }
+  .horizontal-showcase__track {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 14px;
+    transform: none;
+    scroll-snap-type: x mandatory;
+  }
+  .horizontal-product-card { scroll-snap-align: start; }
+}
