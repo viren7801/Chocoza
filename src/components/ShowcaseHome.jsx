@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Heart, Leaf, MapPin, MessageCircle, Sparkles } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { ChocolateStory, HorizontalProductScroll } from "@/components/ScrollExperiences";
 import { getWhatsAppLink, products } from "@/data/catalog";
 import chocoBlast from "@/images/ChocoBlast.png";
 import silkyChocolate from "@/images/silkyChocolate.png";
@@ -108,37 +109,9 @@ export default function ShowcaseHome() {
         </div>
       </section>
 
-      <section className="featured-section">
-        <div className="section-shell">
-          <Reveal className="section-heading">
-            <div>
-              <div className="eyebrow">A few crowd favourites</div>
-              <h2>Made to be loved.</h2>
-            </div>
-            <p>Small-batch creations, prepared with care. Message us to check what is freshly available.</p>
-            <Link className="text-link" href="/products">Explore the menu <ArrowUpRight size={15} /></Link>
-          </Reveal>
+      <ChocolateStory image={chocoBlast} />
 
-          <div className="product-grid">
-            {featured.map((product, index) => (
-              <Reveal key={product.slug} delay={index * 70}>
-                <article className="product-card" data-tilt>
-                  <div className="product-photo">
-                    {product.badge && <span className="product-badge">{product.badge}</span>}
-                    <Image src={product.image} alt={product.name} className={product.category === "NYC Cookies" ? "cookie-image" : undefined} fill sizes="(max-width: 760px) 44vw, 23vw" />
-                  </div>
-                  <div className="product-meta">
-                    <div><h3>{product.name}</h3><p>{product.category}</p></div>
-                  </div>
-                  <a className="product-enquire" href={getWhatsAppLink("Hi Chocoza! I'd like to know more about " + product.name + ".")} target="_blank" rel="noopener noreferrer">
-                    Ask about this <ArrowUpRight size={14} />
-                  </a>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HorizontalProductScroll products={featured} />
 
       <section className="story-section">
         <div className="story-image">
