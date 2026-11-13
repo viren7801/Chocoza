@@ -28,13 +28,13 @@ export default function Products() {
         <div className="section-shell">
           <div className="eyebrow">The Chocoza collection</div>
           <h1>Something sweet<br />for every mood.</h1>
-          <p>Explore handcrafted chocolates, NYC-style cookies, cookie tins, brownies, celebration bakes and custom gift hampers. Availability can change with each small batch, so message us before visiting.</p>
+          <p>Explore handcrafted chocolates, freshly baked cookies, cookie tins, brownies, celebration bakes, custom gift hampers and our new savoury butter collection. Availability can change with each small batch, so message us before visiting.</p>
         </div>
       </section>
 
       <section className="section">
         <div className="section-shell">
-          <p className="catalog-menu-note">Sugar-free chocolate option: add ₹20 to any listed chocolate flavour. Cookie tins are available in 100g and 300g sizes.</p>
+          <p className="catalog-menu-note">Sugar-free chocolate option: add ₹20 to any listed chocolate flavour. Cookie tins are available in 100g and 300g sizes. Flavoured butter is available in four varieties; message us for current availability and pricing.</p>
           <div className="catalog-filters" aria-label="Filter products by category">
             {productCategories.map((item) => (
               <button
