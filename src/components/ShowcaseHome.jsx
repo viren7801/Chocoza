@@ -15,6 +15,7 @@ const doubleChocolateCookie = "/double-chocolate-cookie.webp";
 
 const collections = [
   { title: "Chocolates", subtitle: "Little bites of joy", image: chocoBlast, href: "/products?category=Chocolates" },
+  { title: "Flavoured Butter", subtitle: "Four savoury flavours", image: "/butter-garlic-herbs.svg", href: "/products?category=Flavoured%20Butter" },
   { title: "NYC Cookies", subtitle: "Two irresistible flavours", image: classicCookie, href: "/products?category=NYC%20Cookies" },
   { title: "Cookie Tins", subtitle: "Five flavours · two sizes", image: classicCookie, href: "/products?category=Cookie%20Tins" },
   { title: "Brownies", subtitle: "Six flavours · box of 6", image: "/box-of-6-brownies.webp", href: "/products?category=Brownies" },
@@ -41,7 +42,7 @@ export default function ShowcaseHome() {
             <div className="eyebrow">Homemade · Pure veg · Made with love</div>
             <h1>A little piece of <em>happiness.</em></h1>
             <p className="hero-description">
-              Handcrafted chocolates, freshly baked cookies and brownies — thoughtful little treats for your everyday moments and sweetest celebrations.
+              Handcrafted chocolates, freshly baked cookies and brownies, plus flavour-packed butter — thoughtful little treats for everyday moments and sweetest celebrations.
             </p>
             <div className="hero-actions">
               <a className="button-primary" href={heroOrder} target="_blank" rel="noopener noreferrer">
@@ -73,7 +74,7 @@ export default function ShowcaseHome() {
         <div className="marquee-track">
           {Array.from({ length: 2 }).map((_, index) => (
             <span key={index} className="contents">
-              <span>Handmade with heart</span><b>✳</b><span>Chocolate in every mood</span><b>✳</b><span>Freshly baked happiness</span><b>✳</b><span>Thoughtful gifting</span><b>✳</b><span>Made in Navsari</span><b>✳</b>
+              <span>Handmade with heart</span><b>✳</b><span>Chocolate in every mood</span><b>✳</b><span>Freshly baked happiness</span><b>✳</b><span>Flavour-packed butter</span><b>✳</b><span>Thoughtful gifting</span><b>✳</b><span>Made in Navsari</span><b>✳</b>
             </span>
           ))}
         </div>
@@ -86,7 +87,7 @@ export default function ShowcaseHome() {
               <div className="eyebrow">Find your favourite</div>
               <h2>Made for every craving.</h2>
             </div>
-            <p>From rich chocolate moments to freshly baked comforts, find something lovely to take home.</p>
+            <p>From rich chocolate moments and freshly baked comforts to savoury butter blends, find something lovely to take home.</p>
             <Link className="text-link" href="/products">View all treats <ArrowUpRight size={15} /></Link>
           </Reveal>
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, MessageCircle, MapPin } from "lucide-react";
 import { getWhatsAppLink, products } from "@/data/catalog";
+import ProductScrollExperience from "@/components/ProductScrollExperience";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -40,20 +41,6 @@ export default async function ProductDetail({ params }) {
             <div className="product-detail-price">
               {product.priceLabel || (product.price !== null ? "₹" + product.price : "Ask for current price")}
             </div>
-            {product.variants?.length > 0 && (
-              <div className="product-variants">
-                <h2>Available options</h2>
-                <div className="product-variant-list">
-                  {product.variants.map((variant) => (
-                    <div className="product-variant" key={variant.label}>
-                      <span>{variant.label}{variant.note ? <small>{variant.note}</small> : null}</span>
-                      <strong>₹{variant.price}</strong>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {product.optionNote && <p className="product-detail-note">{product.optionNote}</p>}
             <p className="product-detail-note">Message us to confirm today's availability, quantity and pickup time. No online payment or delivery checkout.</p>
             <a className="button-primary" href={orderLink} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={16} /> Enquire on WhatsApp <ArrowUpRight size={15} />
@@ -62,6 +49,7 @@ export default async function ProductDetail({ params }) {
           </div>
         </div>
       </section>
+      <ProductScrollExperience product={product} orderLink={orderLink} />
       <div className="pickup-band">
         <strong>Freshly made, personally confirmed.</strong>
         <span>Your order is confirmed with the Chocoza team on WhatsApp before collection.</span>
